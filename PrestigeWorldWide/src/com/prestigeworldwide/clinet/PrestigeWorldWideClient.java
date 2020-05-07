@@ -9,5 +9,8 @@ public class PrestigeWorldWideClient {
     public static void main(String[] args) {
         Player d = new Elf();
         System.out.println(d.toString());
+        d.setNumItems(1);
+        d.heal();
+        System.out.println(d.toString());
     }
 }

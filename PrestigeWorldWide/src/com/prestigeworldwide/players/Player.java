@@ -7,6 +7,7 @@ public abstract class Player {
     private int strength;
     private int defence;
     private int luck;
+    private int numItems;
 
     public Player(){
 
@@ -14,6 +15,13 @@ public abstract class Player {
 
     public abstract void attack();
     public abstract void defend();
+
+    //Not actual implementation, checking to make sure heal method works
+    public void heal(){
+        if(numItems > 0){
+            setHealth(this.health +10);
+        }
+    }
 
 
     public int getHealth() {
@@ -52,6 +60,14 @@ public abstract class Player {
 
     public void setLuck(int luck) {
         this.luck = luck;
+    }
+
+    public int getNumItems() {
+        return numItems;
+    }
+
+    public void setNumItems(int numItems) {
+        this.numItems = numItems;
     }
 
     @Override

@@ -1,6 +1,8 @@
 package com.prestigeworldwide.players;
 
 public abstract class Player {
+    public static final int MAX_ATTRIBUTE_LEVEL = 100;
+
     private int health;
     private int strength;
     private int defence;
@@ -18,8 +20,14 @@ public abstract class Player {
         return health;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+        //create method to have if check for every attribute
+    public void setHealth(int health) throws IllegalArgumentException{
+        if(this.health <= MAX_ATTRIBUTE_LEVEL) {
+            this.health = health;
+        }
+        else {
+            throw new IllegalArgumentException("Can not exceed 100 for an attribute");
+        }
     }
 
     public int getStrength() {
@@ -44,5 +52,15 @@ public abstract class Player {
 
     public void setLuck(int luck) {
         this.luck = luck;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "health=" + health +
+                ", strength=" + strength +
+                ", defence=" + defence +
+                ", luck=" + luck +
+                '}';
     }
 }

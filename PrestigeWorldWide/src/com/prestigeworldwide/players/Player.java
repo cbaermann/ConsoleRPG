@@ -9,6 +9,7 @@ public abstract class Player {
     private int luck;
     private int numItems;
 
+
     public Player(){
 
     }

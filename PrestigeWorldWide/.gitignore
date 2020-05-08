@@ -1,8 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-.idea
+,idea/
 *.iml
-.class
+*.class
 .zip
 .jar

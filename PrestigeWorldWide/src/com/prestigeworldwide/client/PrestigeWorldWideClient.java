@@ -1,9 +1,7 @@
-package com.prestigeworldwide.clinet;
+package com.prestigeworldwide.client;
 
-import com.prestigeworldwide.players.Dwarf;
 import com.prestigeworldwide.players.Elf;
 import com.prestigeworldwide.players.Player;
-import com.prestigeworldwide.players.Wizard;
 
 public class PrestigeWorldWideClient {
     public static void main(String[] args) {

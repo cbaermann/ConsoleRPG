@@ -1,5 +1,10 @@
 package com.prestigeworldwide.players;
 
+import com.prestigeworldwide.items.ItemCatalog;
+import com.prestigeworldwide.items.Items;
+
+import java.util.List;
+
 public abstract class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
 
@@ -8,7 +13,7 @@ public abstract class Player {
     private int defence;
     private int luck;
     private int numItems;
-
+    public List<Items> playerItems;
 
     public Player(){
 

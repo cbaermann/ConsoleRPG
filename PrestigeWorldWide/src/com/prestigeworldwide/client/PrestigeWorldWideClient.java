@@ -1,6 +1,5 @@
 package com.prestigeworldwide.client;
 
-
 import com.prestigeworldwide.scanner.PlayerScanner;
 
 
@@ -9,6 +8,7 @@ public class PrestigeWorldWideClient {
         PlayerScanner p = new PlayerScanner();
         p.title();
         p.chosePlayer();
+
 
     }
 }

@@ -13,7 +13,7 @@ public abstract class Player {
     private int defence;
     private int luck;
     private int numItems;
-    public List<Items> playerItems;
+    List<Items> playerItems;
 
     public Player(){
 
@@ -28,6 +28,18 @@ public abstract class Player {
             setHealth(this.health +10);
         }
     }
+
+    public void showPlayerItems(){
+        if(!playerItems.isEmpty()) {
+            for (Items item : playerItems) {
+                System.out.println(item);
+                System.out.println("No items currently in your inventory");
+            }
+        }
+        else {
+            System.out.println("No items currently in your inventory");
+            }
+        }
 
 
     public int getHealth() {

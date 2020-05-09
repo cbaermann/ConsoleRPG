@@ -18,7 +18,9 @@ public class PlayerScanner{
                     "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
             input = scanner.nextLine();
             player = PlayerScannerFactory.createPlayer(input);
-        System.out.println("You chose " + player.getName() + ". \n Base stats are as follows: " + player.toString());
+        System.out.println("You chose " + player.getName() + ". \n Base stats are as follows: \n" + player.toString());
+        //throwing NullPointerException
+//        player.showPlayerItems();
     }
 
 }

@@ -7,11 +7,13 @@ import com.prestigeworldwide.players.Player;
 import java.util.Scanner;
 
 public class PlayerScanner extends Player {
+
+    public Player player;
     public void title(){
         System.out.println("Welcome to Prestige World Wide");
     }
 
-    public static void chosePlayer(){
+    public void chosePlayer(){
         Scanner scanner = new Scanner(System.in);
         String input;
             System.out.println("Who do you choose...");
@@ -20,7 +22,7 @@ public class PlayerScanner extends Player {
             System.out.println("3. Dwarf");
 
             input = scanner.nextLine();
-            Player player = PlayerScannerFactory.createPlayer(input);
+            player = PlayerScannerFactory.createPlayer(input);
             System.out.println(player.toString());
     }
 

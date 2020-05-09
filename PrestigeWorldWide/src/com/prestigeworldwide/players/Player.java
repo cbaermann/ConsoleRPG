@@ -78,11 +78,9 @@ public abstract class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "health=" + health +
-                ", strength=" + strength +
-                ", defence=" + defence +
-                ", luck=" + luck +
-                '}';
+        return  "\n" + " health=" + getHealth() + "\n" +
+                " strength=" + getStrength() + "\n" +
+                " defence=" + getDefence() + "\n" +
+                " luck=" + getLuck() + "\n";
     }
 }

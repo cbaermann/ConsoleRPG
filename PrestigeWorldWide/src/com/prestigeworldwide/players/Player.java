@@ -3,6 +3,7 @@ package com.prestigeworldwide.players;
 import com.prestigeworldwide.items.ItemCatalog;
 import com.prestigeworldwide.items.Items;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Player {
@@ -13,7 +14,7 @@ public abstract class Player {
     private int defence;
     private int luck;
     private int numItems;
-    List<Items> playerItems;
+    private List<Items> playerItems = new ArrayList<>();
 
     public Player(){
 

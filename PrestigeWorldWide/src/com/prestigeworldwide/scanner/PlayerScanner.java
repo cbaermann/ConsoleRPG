@@ -20,7 +20,7 @@ public class PlayerScanner{
             player = PlayerScannerFactory.createPlayer(input);
         System.out.println("You chose " + player.getName() + ". \n Base stats are as follows: \n" + player.toString());
         //throwing NullPointerException
-//        player.showPlayerItems();
+        player.showPlayerItems();
     }
 
 }

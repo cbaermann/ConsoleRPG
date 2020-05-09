@@ -2,6 +2,7 @@ package com.prestigeworldwide.players;
 
 public class Wizard extends Player{
     public Wizard(){
+        setName("Nancy");
         setDefence(5);
         setLuck(3);
         setStrength(7);

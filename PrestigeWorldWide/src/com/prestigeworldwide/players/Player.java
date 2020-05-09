@@ -7,7 +7,7 @@ import java.util.List;
 
 public abstract class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
-
+    private String name;
     private int health;
     private int strength;
     private int defence;
@@ -76,9 +76,17 @@ public abstract class Player {
         this.numItems = numItems;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return  "\n" + " health=" + getHealth() + "\n" +
+        return  " health=" + getHealth() + "\n" +
                 " strength=" + getStrength() + "\n" +
                 " defence=" + getDefence() + "\n" +
                 " luck=" + getLuck() + "\n";

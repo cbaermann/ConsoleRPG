@@ -1,12 +1,10 @@
 package com.prestigeworldwide.scanner;
 
-
-import com.prestigeworldwide.players.Elf;
 import com.prestigeworldwide.players.Player;
 
 import java.util.Scanner;
 
-public class PlayerScanner extends Player {
+public class PlayerScanner{
 
     public Player player;
     public void title(){
@@ -16,23 +14,11 @@ public class PlayerScanner extends Player {
     public void chosePlayer(){
         Scanner scanner = new Scanner(System.in);
         String input;
-            System.out.println("Who do you choose...");
-            System.out.println("1. Elf");
-            System.out.println("2. Wizard");
-            System.out.println("3. Dwarf");
-
+            System.out.println("Who do you choose..." +
+                    "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
             input = scanner.nextLine();
             player = PlayerScannerFactory.createPlayer(input);
-            System.out.println(player.toString());
+        System.out.println("You chose " + player.getName() + ". \n Base stats are as follows: " + player.toString());
     }
 
-    @Override
-    public void attack() {
-
-    }
-
-    @Override
-    public void defend() {
-
-    }
 }

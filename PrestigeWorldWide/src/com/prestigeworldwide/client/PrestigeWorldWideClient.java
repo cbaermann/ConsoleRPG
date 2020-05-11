@@ -11,6 +11,7 @@ public class PrestigeWorldWideClient {
         PlayerScanner p = new PlayerScanner();
         p.title();
         p.chosePlayer();
+
 //        p.begining();
 
 //        Player e = new Elf();

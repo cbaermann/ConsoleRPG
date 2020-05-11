@@ -38,9 +38,9 @@ public class PlayerScanner{
     public void begining(){
         World w = new World();
         w.startPoint();
-        System.out.println("Where would you like to go?. U");
+        System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
-        if(input.equals("u")){
+        if(input.equals("y")){
             w.roomOne();
         }
 

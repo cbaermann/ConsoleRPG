@@ -7,12 +7,14 @@ import java.util.Scanner;
 public class PlayerScanner{
 
     public Player player;
+    Scanner scanner = new Scanner(System.in);
+
     public void title(){
         System.out.println("Welcome to Prestige World Wide");
     }
 
     public void chosePlayer(){
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         String input;
             System.out.println("Who do you choose..." +
                     "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
@@ -22,5 +24,8 @@ public class PlayerScanner{
         //throwing NullPointerException
         player.showPlayerItems();
     }
+
+
+
 
 }

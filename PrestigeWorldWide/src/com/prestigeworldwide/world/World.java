@@ -1,5 +1,7 @@
 package com.prestigeworldwide.world;
 
+import com.prestigeworldwide.players.Player;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +17,7 @@ public class World {
          System.out.println("Hi im navigating");
      }
 
-     public void roomOne(){
+     public void roomOne(Player player, Enemy enemy){
          System.out.println("Hey im in the drum room");
      }
 

@@ -12,9 +12,8 @@ public abstract class Player {
     private int health;
     private int strength;
     private int defence;
-    private int luck;
     private int numItems;
-    private List<Items> playerItems = new ArrayList<>();
+    public List<Items> playerItems = new ArrayList<>();
 
     public Player(){
 
@@ -34,11 +33,11 @@ public abstract class Player {
         if(!playerItems.isEmpty()) {
             for (Items item : playerItems) {
                 System.out.println(item);
-                System.out.println("No items currently in your inventory");
+//                System.out.println("No items currently in your inventory");
             }
         }
         else {
-            System.out.println("No items currently in your inventory");
+            System.out.println("No items currently in your inventory \n");
             }
         }
 
@@ -73,14 +72,6 @@ public abstract class Player {
         this.defence = defence;
     }
 
-    public int getLuck() {
-        return luck;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
-    }
-
     public int getNumItems() {
         return numItems;
     }
@@ -101,7 +92,6 @@ public abstract class Player {
     public String toString() {
         return  " health=" + getHealth() + "\n" +
                 " strength=" + getStrength() + "\n" +
-                " defence=" + getDefence() + "\n" +
-                " luck=" + getLuck() + "\n";
+                " defence=" + getDefence() + "\n";
     }
 }

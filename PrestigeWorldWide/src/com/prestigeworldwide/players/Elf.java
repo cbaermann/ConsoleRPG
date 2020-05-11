@@ -5,7 +5,6 @@ public class Elf extends Player{
         setName("Brennan");
         setDefence(3);
         setHealth(8);
-        setLuck(4);
         setStrength(8);
     }
 

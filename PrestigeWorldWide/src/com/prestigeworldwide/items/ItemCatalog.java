@@ -1,6 +1,10 @@
 package com.prestigeworldwide.items;
 
+import com.prestigeworldwide.players.Player;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class ItemCatalog {
@@ -21,5 +25,6 @@ public class ItemCatalog {
             new Items(11L, "VK-47 Flatline Rifle", 50, "enemy health damaged by 50", ItemType.RARE),
             new Items(12L, "Force Field", 50, "increases defense by 50", ItemType.RARE)
     );
+
 
 }

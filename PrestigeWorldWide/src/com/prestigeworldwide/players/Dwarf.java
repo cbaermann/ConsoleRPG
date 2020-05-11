@@ -9,8 +9,9 @@ public class Dwarf extends Player{
     }
 
     @Override
-    public void attack() {
-
+    public int attack() {
+        System.out.println(getName() + "attacked for " + getStrength() + "damage");
+        return getStrength();
     }
 
     @Override

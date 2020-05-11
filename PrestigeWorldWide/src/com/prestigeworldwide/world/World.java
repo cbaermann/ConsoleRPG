@@ -26,7 +26,9 @@ public class World {
 
      }
      public void roomOne(Player player, Enemy enemy){
-         System.out.println("Room 1");
+         while(enemy.getHealth() > 0){
+             
+         }
      }
     public void roomTwo(){
         System.out.println("Room 2");

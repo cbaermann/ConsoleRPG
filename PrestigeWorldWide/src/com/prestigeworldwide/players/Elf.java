@@ -9,8 +9,8 @@ public class Elf extends Player{
     }
 
     @Override
-    public void attack() {
-
+    public int attack() {
+        return getStrength();
     }
 
     @Override

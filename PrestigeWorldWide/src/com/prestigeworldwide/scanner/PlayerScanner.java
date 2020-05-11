@@ -1,5 +1,6 @@
 package com.prestigeworldwide.scanner;
 
+import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.world.World;
 
@@ -8,6 +9,7 @@ import java.util.Scanner;
 public class PlayerScanner{
 
     public Player player;
+    public Enemy enemy;
     Scanner scanner = new Scanner(System.in);
     String input;
 
@@ -38,10 +40,10 @@ public class PlayerScanner{
     public void begining(){
         World w = new World();
         w.startPoint();
-        System.out.println("Where would you like to go?. U");
+        System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
-        if(input.equals("u")){
-            w.roomOne();
+        if(input.equals("y")){
+            w.roomOne(player, enemy);
         }
 
     }

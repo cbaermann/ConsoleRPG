@@ -9,8 +9,9 @@ public class Wizard extends Player{
     }
 
     @Override
-    public void attack() {
+    public int attack() {
         System.out.println("aarrggg");
+        return getStrength();
     }
 
     @Override

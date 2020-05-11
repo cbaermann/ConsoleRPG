@@ -1,5 +1,6 @@
 package com.prestigeworldwide.world;
 
+import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
 
 import java.util.Arrays;
@@ -7,44 +8,44 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class World {
+//    String rooms[] = new String[] {"0","1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    public int currentRoom;
+
      public void startPoint(){
          System.out.println(" You awaken to the sound of someone playing drums" +
                  "\n but nobody plays your drums besides you" +
                  "\n go investigate");
-     }
+         System.out.println("Currently in Room: " + currentRoom + " moving ahead one room");
+         currentRoom++;
+         System.out.println("Currently in Room: " + currentRoom + " moving ahead one room");
+         currentRoom++;
+         System.out.println("Currently in Room: " + currentRoom + " moving ahead one room");
+         currentRoom++;
+         System.out.println("Currently in Room " + currentRoom);
 
-     public void navigateThroughWorld(){
-         System.out.println("Hi im navigating");
-     }
 
+     }
      public void roomOne(Player player, Enemy enemy){
-         System.out.println("Hey im in the drum room");
+         while(enemy.getHealth() > 0){
+             
+         }
      }
-
     public void roomTwo(){
-        System.out.println("Hi from room two");
+        System.out.println("Room 2");
     }
     public void roomThree(){
-        System.out.println("Hi from room three");
+        System.out.println("Room 3");
     }
     public void roomFour(){
-        System.out.println("Hi from room four");
+        System.out.println("Room 4");
     }
     public void roomFive(){
-        System.out.println("Hi from room five");
+        System.out.println("Room 5");
     }
     public void roomSix(){
-        System.out.println("Hi from room six");
+        System.out.println("Room 6");
     }
-    public void roomSeven(){
-        System.out.println("Hi from room seven");
-    }
-    public void roomEight(){
-        System.out.println("Hi from room eight");
-    }
-    public void roomNine(){
-        System.out.println("Hi from room nine");
-    }
+
 
 
 }

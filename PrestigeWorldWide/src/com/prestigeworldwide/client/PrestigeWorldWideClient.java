@@ -1,5 +1,7 @@
 package com.prestigeworldwide.client;
 
+import com.prestigeworldwide.items.ItemCatalog;
+import com.prestigeworldwide.items.Items;
 import com.prestigeworldwide.players.Elf;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.scanner.PlayerScanner;
@@ -15,7 +17,6 @@ public class PrestigeWorldWideClient {
         System.out.println(e.toString());
         e.setNumItems(1);
         System.out.println(e.toString());
-
 
     }
 }

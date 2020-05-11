@@ -14,7 +14,7 @@ public abstract class Player {
     private int defence;
     private int luck;
     private int numItems;
-    private List<Items> playerItems = new ArrayList<>();
+    public List<Items> playerItems = new ArrayList<>();
 
     public Player(){
 
@@ -45,6 +45,11 @@ public abstract class Player {
 
     public int getHealth() {
         return health;
+    }
+
+    //list of items in player inventory
+    public List<Items> getPlayerItems(){
+        return playerItems;
     }
 
         //create method to have if check for every attribute

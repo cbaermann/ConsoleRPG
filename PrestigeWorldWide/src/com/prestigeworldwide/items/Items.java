@@ -1,6 +1,10 @@
 package com.prestigeworldwide.items;
 
+import com.prestigeworldwide.players.Player;
+
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Items implements Comparable<Items>{
@@ -21,6 +25,13 @@ public class Items implements Comparable<Items>{
         setDescription(description);
         setItemType(itemType);
     }
+
+    //Add items to player inventory
+//    public static void addItem(findByID, Player player){
+//        for (int i = 0; i < numItems; i++)
+//            player.getPlayerItems().add(findByID);
+//    }
+
 
 
     public Long getId() {

@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ItemCatalog {
 
+
     private List<Items> itemCatalog = Arrays.asList(
 
             new Items(1L, "Small Health Potion", 5, "heals health by 5", ItemType.POTION),

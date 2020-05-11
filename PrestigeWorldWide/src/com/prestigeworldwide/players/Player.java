@@ -3,17 +3,18 @@ package com.prestigeworldwide.players;
 import com.prestigeworldwide.items.ItemCatalog;
 import com.prestigeworldwide.items.Items;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
-
+    private String name;
     private int health;
     private int strength;
     private int defence;
     private int luck;
     private int numItems;
-    public List<Items> playerItems;
+    private List<Items> playerItems = new ArrayList<>();
 
     public Player(){
 
@@ -28,6 +29,18 @@ public abstract class Player {
             setHealth(this.health +10);
         }
     }
+
+    public void showPlayerItems(){
+        if(!playerItems.isEmpty()) {
+            for (Items item : playerItems) {
+                System.out.println(item);
+                System.out.println("No items currently in your inventory");
+            }
+        }
+        else {
+            System.out.println("No items currently in your inventory");
+            }
+        }
 
 
     public int getHealth() {
@@ -76,13 +89,19 @@ public abstract class Player {
         this.numItems = numItems;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return "Player{" +
-                "health=" + health +
-                ", strength=" + strength +
-                ", defence=" + defence +
-                ", luck=" + luck +
-                '}';
+        return  " health=" + getHealth() + "\n" +
+                " strength=" + getStrength() + "\n" +
+                " defence=" + getDefence() + "\n" +
+                " luck=" + getLuck() + "\n";
     }
 }

@@ -1,5 +1,7 @@
 package com.prestigeworldwide.players;
 
+import com.prestigeworldwide.enemies.Enemy;
+
 public class Dwarf extends Player{
     public Dwarf(){
         setName("Dale");
@@ -9,9 +11,11 @@ public class Dwarf extends Player{
     }
 
     @Override
-    public int attack() {
-        System.out.println(getName() + "attacked for " + getStrength() + "damage");
-        return getStrength();
+    public void attack(Enemy enemy) {
+        System.out.println(getName() + " attacked for " + getStrength() + " damage");
+        System.out.println(enemy.getHealth());
+        enemy.setHealth(enemy.getHealth() - this.getStrength());
+        System.out.println(enemy.getHealth());
     }
 
     @Override

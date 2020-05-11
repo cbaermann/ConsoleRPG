@@ -1,6 +1,7 @@
 package com.prestigeworldwide.scanner;
 
 import com.prestigeworldwide.enemies.Enemy;
+import com.prestigeworldwide.enemies.RoomOneEnemy;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.world.World;
 
@@ -9,7 +10,7 @@ import java.util.Scanner;
 public class PlayerScanner{
 
     public Player player;
-    public Enemy enemy;
+    public Enemy enemy = new RoomOneEnemy();
     Scanner scanner = new Scanner(System.in);
     String input;
 

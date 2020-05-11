@@ -1,5 +1,7 @@
 package com.prestigeworldwide.players;
 
+import com.prestigeworldwide.enemies.Enemy;
+
 public class Wizard extends Player{
     public Wizard(){
         setName("Nancy");
@@ -9,9 +11,9 @@ public class Wizard extends Player{
     }
 
     @Override
-    public int attack() {
+    public void attack(Enemy enemy) {
         System.out.println("aarrggg");
-        return getStrength();
+
     }
 
     @Override

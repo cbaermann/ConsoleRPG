@@ -1,6 +1,6 @@
 package com.prestigeworldwide.players;
 
-import com.prestigeworldwide.items.ItemCatalog;
+import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.items.Items;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public abstract class Player {
 
     }
 
-    public abstract int attack();
+    public abstract void attack(Enemy enemy);
     public abstract void defend();
 
     //Not actual implementation, checking to make sure heal method works

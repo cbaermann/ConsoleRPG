@@ -21,20 +21,19 @@ public class Enemy {
         }
     }
 
-    public void enemyDefend(Player player){
+    public void enemyDefend(Player player) {
         int result = player.getStrength() - this.getDefence();
-        if(result <= 0){
+        if (result <= 0) {
             System.out.println("negative result" + result);
             System.out.println(player.getName() + " did no damage");
-        }
-        else{
+        } else {
             System.out.println("should do damage result" + result);
             this.setHealth(this.health - result);
             System.out.println(player.getName() + " did " + result + " damage");
         }
     }
 
-    public void enemyHeal(){
+    public void enemyHeal() {
         setHealth(this.health + 10);
         System.out.println(this.getName() + " healed. Health is now: " + getHealth());
     }

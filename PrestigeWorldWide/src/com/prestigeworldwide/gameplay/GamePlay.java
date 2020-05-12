@@ -12,9 +12,8 @@ public class GamePlay {
     public Player player;
     public Enemy enemy;
     private int currentRoom = 1;
-
+    private String input;
     Scanner scanner = new Scanner(System.in);
-    String input;
 
     public void title() {
         System.out.println("Welcome to Prestige World Wide");
@@ -24,7 +23,7 @@ public class GamePlay {
 
     public void choosePlayer() {
         System.out.println("Who do you choose..." +
-                "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
+                "\n 1. Brennan \n 2. Nancy \n 3. Dale");
         input = scanner.nextLine();
         System.out.println("This is the input " + input);
         player = PlayerGameplayFactory.createPlayer(input);
@@ -129,9 +128,7 @@ public class GamePlay {
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
-                if (enemy.getHealth() > 0) {
-                    enemyAction();
-                }
+                enemyAction();
             }
             if (input.equalsIgnoreCase("d")) {
                 player.playerDefend(enemy);
@@ -145,10 +142,11 @@ public class GamePlay {
             }
             healthStatus();
         }
-        if(player.getHealth() <= 0){
+        if (player.getHealth() <= 0) {
             choosePlayer();
         }
     }
+
 
     public void enemyAction(){
         Random rand = new Random();

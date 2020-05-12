@@ -2,7 +2,6 @@ package com.prestigeworldwide.players;
 
 import com.prestigeworldwide.enemies.Enemy;
 
-
 public class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
     private String name;
@@ -23,12 +22,12 @@ public class Player {
         }
 
     }
-    public void playerDefend(Enemy enemy){
+
+    public void playerDefend(Enemy enemy) {
         int result = enemy.getStrength() - this.getDefence();
-        if(result <= 0){
+        if (result <= 0) {
             System.out.println(enemy.getName() + "did no damage");
-        }
-        else{
+        } else {
             this.setHealth(this.health - result);
             System.out.println(enemy.getName() + " did " + result + " damage");
         }
@@ -39,7 +38,6 @@ public class Player {
         setHealth(this.health + 10);
         System.out.println("Your health is now " + getHealth());
     }
-
 
 
     public int getHealth() {

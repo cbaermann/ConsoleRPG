@@ -1,13 +1,13 @@
 package com.prestigeworldwide.players;
 
-public class Dwarf extends Player {
-    public Dwarf() {
+public class Dale extends Player {
+
+    public Dale() {
         setName("Dale");
         setDefence(10);
         setHealth(5);
         setStrength(50);
     }
-
 }
 
 

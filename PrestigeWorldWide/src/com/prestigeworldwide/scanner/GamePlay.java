@@ -44,11 +44,15 @@ public class GamePlay {
         if(input.equalsIgnoreCase("y")){
             System.out.println("you encountered " + enemy.getName() +
             "\n" + enemy.toString());
-            if(enemy.getHealth() > 0){
+            if(enemy.getHealth() > 0 && player.getHealth() >0)   {
                 battlePrompt();
             }
             if(enemy.getHealth() <= 0){
                 partTwo();
+            }
+            if(player.getHealth() <=0){
+                System.out.println("You have been defeated");
+                chosePlayer();
             }
         }
 
@@ -65,14 +69,16 @@ public class GamePlay {
 
 
 
-
     public void battlePrompt(){
-        while(enemy.getHealth() > 0) {
+        while(enemy.getHealth() > 0 && player.getHealth() > 0) {
             System.out.println("Attack , Heal, or quit?  [a,h,q]");
 
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
+                if(enemy.getHealth() > 0) {
+                    enemy.enemyAttack(player);
+                }
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();

@@ -1,15 +1,28 @@
 package com.prestigeworldwide.enemies;
 
-public abstract class Enemy {
+import com.prestigeworldwide.players.Player;
+import com.prestigeworldwide.scanner.GamePlay;
+
+public class Enemy {
     private String name;
     private int health;
     private int strength;
     private int defence;
 
 
-    public abstract int enemyAttack();
+//    public abstract int enemyAttack();
+//
+//    public abstract int defend();
 
-    public abstract int defend();
+    public void enemyAttack(Player player) {
+        if(player.getHealth() > 0) {
+            System.out.println(getName() + " attacked for " + getStrength() + " damage");
+            player.setHealth(player.getHealth() - this.getStrength());
+        }
+        if(player.getHealth()<= 0){
+            System.out.println("You were defeated!! Try again! " );
+        }
+    }
 
 
 

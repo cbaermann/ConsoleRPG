@@ -6,7 +6,7 @@ import com.prestigeworldwide.items.Items;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Player {
+public class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
     private String name;
     private int health;
@@ -19,8 +19,17 @@ public abstract class Player {
 
     }
 
-    public abstract void playerAttack(Enemy enemy);
-    public abstract void defend();
+    public void playerAttack(Enemy enemy) {
+        if(enemy.getHealth() > 0) {
+            System.out.println(getName() + " attacked for " + getStrength() + " damage");
+            enemy.setHealth(enemy.getHealth() - this.getStrength());
+        }
+        if(enemy.getHealth()<= 0){
+            System.out.println("You defeated " + enemy.getName());
+        }
+
+    }
+//    public void defend();
 
     //Not actual implementation, checking to make sure heal method works
     public void heal(){

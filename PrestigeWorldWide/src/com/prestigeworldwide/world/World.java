@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 public class World {
-    //    String rooms[] = new String[] {"0","1", "2", "3", "4", "5", "6", "7", "8", "9"};
     public int currentRoom;
 
     public void startPoint() {

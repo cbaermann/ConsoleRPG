@@ -16,7 +16,7 @@ public class Dwarf extends Player{
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
             enemy.setHealth(enemy.getHealth() - this.getStrength());
         }
-        if(enemy.getHealth()< 0){
+        if(enemy.getHealth()<= 0){
             System.out.println("You defeated " + enemy.getName());
         }
 

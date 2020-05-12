@@ -26,7 +26,7 @@ public class PlayerScanner{
             input = scanner.nextLine();
             player = PlayerScannerFactory.createPlayer(input);
         System.out.println("You chose " + player.getName() + ". \n Base stats are as follows: \n" + player.toString());
-        player.showPlayerItems();
+//        player.showPlayerItems();
         System.out.println("Would you like to begin your journey? (y/n)");
         input = scanner.nextLine();
         if(input.equals("y")){

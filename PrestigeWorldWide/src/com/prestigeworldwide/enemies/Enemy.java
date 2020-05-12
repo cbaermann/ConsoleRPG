@@ -1,6 +1,7 @@
 package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
+import com.prestigeworldwide.scanner.GamePlay;
 
 public class Enemy {
     private String name;
@@ -21,6 +22,7 @@ public class Enemy {
         }
         if (player.getHealth() <= 0) {
             System.out.println("You were defeated!! Try again! ");
+
         }
     }
 

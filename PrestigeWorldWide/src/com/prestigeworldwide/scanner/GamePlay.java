@@ -66,7 +66,6 @@ public class GamePlay {
 
     public void partTwo() {
         World w = new World();
-//        w.startPoint();
         System.out.println("\nEnter Room Two? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -87,7 +86,24 @@ public class GamePlay {
     }
 
     public void partThree() {
-        System.out.println("\n\n\n Part Three under construction");
+        World w = new World();
+        System.out.println("\nEnter Room Three? y/n");
+        input = scanner.nextLine();
+        if (input.equalsIgnoreCase("y")) {
+            enemy = EnemyGameplayFactory.createEnemy(currentRoom);
+            System.out.println("\nDUN, DUN, DUN! The evil brother is here " +
+                    enemy.getName() + "! " + "\n" + enemy.toString());
+            if (enemy.getHealth() > 0 && player.getHealth() > 0) {
+                battlePrompt();
+            }
+            if (enemy.getHealth() <= 0) {
+                System.out.println("Congrats! You are the champion and can now sing " +
+                        "Por Ti Volare at the Catalina Wine Mixer!");
+            }
+            if (input.equalsIgnoreCase("n")) {
+                w.startPoint();
+            }
+        }
     }
 
     public void battlePrompt() {
@@ -96,23 +112,23 @@ public class GamePlay {
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
-                if (enemy.getHealth() > 0) {
-                    enemy.enemyAttack(player);
-                }
-                healthStatus();
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();
+                if (player.getHealth() <= 0) {
+                }
             }
             if (input.equalsIgnoreCase("q")) {
                 choosePlayer();
             }
+            enemy.enemyAttack(player);
+            healthStatus();
         }
     }
 
     //Helper method
     public void healthStatus() {
-        System.out.println("\n" + player.getName() + " health= " + player.getHealth());
-        System.out.println(enemy.getName() + " health= " + enemy.getHealth());
+            System.out.println("\n" + player.getName() + " health= " + player.getHealth());
+            System.out.println(enemy.getName() + " health= " + enemy.getHealth());
     }
 }

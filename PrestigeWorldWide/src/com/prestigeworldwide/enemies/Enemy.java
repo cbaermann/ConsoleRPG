@@ -34,7 +34,7 @@ public class Enemy {
 
     public void enemyHeal(){
         setHealth(this.health + 10);
-        System.out.println("Your health is now " + getHealth());
+        System.out.println(this.getName() + " healed. Health is now: " + getHealth());
     }
 
 

@@ -108,7 +108,6 @@ public class GamePlay {
 //                    enemy.enemyAttack(player);
                     enemyAction();
                 }
-                healthStatus();
             }
             if (input.equalsIgnoreCase("d")) {
                 player.playerDefend(enemy);
@@ -120,6 +119,10 @@ public class GamePlay {
             if (input.equalsIgnoreCase("q")) {
                 choosePlayer();
             }
+            healthStatus();
+        }
+        if(player.getHealth() <= 0){
+            choosePlayer();
         }
     }
 

@@ -29,15 +29,26 @@ public class Player {
         }
 
     }
+<<<<<<< HEAD
     public void playerDefend(Enemy enemy){
         int result = enemy.getStrength() - this.getStrength();
+=======
+
+    public void defend(Enemy enemy){
+        int result = enemy.getStrength() - this.getDefence();
+>>>>>>> cody
         if(result <= 0){
             System.out.println(enemy.getName() + "did no damage");
         }
         else{
+<<<<<<< HEAD
             this.setHealth(this.health - result);
             System.out.println(enemy.getName() + " did " + result + " damage");
 
+=======
+            this.setHealth(this.getHealth() - result);
+            System.out.println(enemy.getName() + " did " + result + " damage");
+>>>>>>> cody
         }
     }
 

@@ -29,7 +29,17 @@ public class Player {
         }
 
     }
-//    public void defend();
+    public void playerDefend(Enemy enemy){
+        int result = enemy.getStrength() - this.getStrength();
+        if(result <= 0){
+            System.out.println(enemy.getName() + "did no damage");
+        }
+        else{
+            this.setHealth(this.health - result);
+            System.out.println(enemy.getName() + " did " + result + " damage");
+
+        }
+    }
 
     //Not actual implementation, checking to make sure heal method works
     public void heal() {
@@ -37,16 +47,6 @@ public class Player {
         System.out.println("Your health is now " + getHealth());
     }
 
-    public void showPlayerItems() {
-        if (!playerItems.isEmpty()) {
-            for (Items item : playerItems) {
-                System.out.println(item);
-//                System.out.println("No items currently in your inventory");
-            }
-        } else {
-            System.out.println("No items currently in your inventory \n");
-        }
-    }
 
 
     public int getHealth() {

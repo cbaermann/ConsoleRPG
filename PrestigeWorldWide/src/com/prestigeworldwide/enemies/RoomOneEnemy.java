@@ -10,7 +10,7 @@ public class RoomOneEnemy extends Enemy {
         setName("Robert");
         setDefence(4);
         setHealth(3);
-        setStrength(1);
+        setStrength(3);
     }
 
 

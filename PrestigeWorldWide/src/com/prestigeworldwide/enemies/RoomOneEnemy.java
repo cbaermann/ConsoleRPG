@@ -1,8 +1,6 @@
 package com.prestigeworldwide.enemies;
 
-import com.prestigeworldwide.players.Player;
-
-public class RoomOneEnemy extends Enemy{
+public class RoomOneEnemy extends Enemy {
 
     public RoomOneEnemy(String a, int b, int c, int d) {
     }
@@ -14,6 +12,7 @@ public class RoomOneEnemy extends Enemy{
         setStrength(1);
     }
 
+<<<<<<< HEAD
     /*@Override
     public void attack(Player player) {
         if(player.getHealth() > 0) {
@@ -30,8 +29,16 @@ public class RoomOneEnemy extends Enemy{
     public int defend(Player player) {
 //        if (player.getHealth() > 0) {
 //            player.setHealth(player.getHealth() - this.getStrength()); //needs to change
+=======
+//    @Override
+//    public int enemyAttack() {
+//        return 0;
+//    }
+>>>>>>> master
 //
-//        }
-        return 0;
-    }
+//    @Override
+//    public int defend() {
+//        return 0;
+//    }
+
 }

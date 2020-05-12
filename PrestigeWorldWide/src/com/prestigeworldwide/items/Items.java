@@ -1,24 +1,17 @@
 package com.prestigeworldwide.items;
 
-import com.prestigeworldwide.players.Player;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-public class Items implements Comparable<Items>{
+public class Items implements Comparable<Items> {
     private Long id;
     private String name;
     private int stats;
     private String description;
     private ItemType itemType;
 
-    public Items(Long id){
+    public Items(Long id) {
         this.id = id;
     }
 
-    public Items(Long id, String name, int stats, String description, ItemType itemType){
+    public Items(Long id, String name, int stats, String description, ItemType itemType) {
         setId(id);
         setName(name);
         setStats(stats);
@@ -31,7 +24,6 @@ public class Items implements Comparable<Items>{
 //        for (int i = 0; i < numItems; i++)
 //            player.getPlayerItems().add(findByID);
 //    }
-
 
 
     public Long getId() {

@@ -4,6 +4,7 @@ import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.world.World;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GamePlay {
@@ -38,13 +39,11 @@ public class GamePlay {
         if (input.equalsIgnoreCase("n")) {
             System.out.println("Well you kind of have no choice");
             beginning();
-        }
-        else{
+        } else {
             System.out.println("Invalid input");
             choosePlayer();
         }
     }
-
 
 
     public void beginning() {
@@ -64,10 +63,9 @@ public class GamePlay {
                 partTwo();
             }
         }
-        if(input.equalsIgnoreCase("n")){
+        if (input.equalsIgnoreCase("n")) {
             choosePlayer();
-        }
-        else{
+        } else {
             System.out.println("Invalid input");
             beginning();
         }
@@ -102,25 +100,43 @@ public class GamePlay {
 
     public void battlePrompt() {
         while (enemy.getHealth() > 0 && player.getHealth() > 0) {
-            System.out.println("Attack , Heal, or quit?  [a,h,q]");
+            System.out.println("Attack, Defend, Heal, or quit?  [a,d,h,q]");
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
                 if (enemy.getHealth() > 0) {
-                    enemy.enemyAttack(player);
+//                    enemy.enemyAttack(player);
+                    enemyAction();
                 }
                 healthStatus();
             }
-            if(input.equalsIgnoreCase("d")){
+            if (input.equalsIgnoreCase("d")) {
                 player.playerDefend(enemy);
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();
+                enemyAction();
             }
             if (input.equalsIgnoreCase("q")) {
                 choosePlayer();
             }
         }
+    }
+
+    public void enemyAction(){
+        Random rand = new Random();
+      int result = rand.nextInt(10 - 1) + 1;
+      if(result > 0 && result <= 5){
+          enemy.enemyAttack(player);
+          System.out.println(result);
+      }
+      if(result > 5 && result < 9){
+          enemy.enemyDefend(player);
+          System.out.println(result);
+      }
+      if(result == 9){
+          enemy.enemyHeal();
+      }
     }
 
     //Helper method

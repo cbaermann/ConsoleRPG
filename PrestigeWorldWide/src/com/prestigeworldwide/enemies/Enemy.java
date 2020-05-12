@@ -2,16 +2,13 @@ package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
 
+import java.util.Random;
+
 public class Enemy {
     private String name;
     private int health;
     private int strength;
     private int defence;
-
-
-    //public abstract int defend(Player player);
-//    public abstract int enemyAttack();
-
 
 
     public void enemyAttack(Player player) {
@@ -22,6 +19,22 @@ public class Enemy {
         if (player.getHealth() <= 0) {
             System.out.println("You were defeated!! Try again! ");
         }
+    }
+
+    public void enemyDefend(Player player){
+        int result = player.getStrength() - this.getDefence();
+        if(result <= 0){
+            System.out.println(player.getName() + " did no damage");
+        }
+        else{
+            this.setHealth(this.health - result);
+            System.out.println(player.getName() + " did " + result + " damage");
+        }
+    }
+
+    public void enemyHeal(){
+        setHealth(this.health + 10);
+        System.out.println("Your health is now " + getHealth());
     }
 
 

@@ -1,7 +1,7 @@
 package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
-import com.prestigeworldwide.scanner.GamePlay;
+
 
 public class Enemy {
     private String name;
@@ -10,21 +10,20 @@ public class Enemy {
     private int defence;
 
 
+    //public abstract int defend(Player player);
 //    public abstract int enemyAttack();
-//
-//    public abstract int defend();
+
+
 
     public void enemyAttack(Player player) {
-        if(player.getHealth() > 0) {
+        if (player.getHealth() > 0) {
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
             player.setHealth(player.getHealth() - this.getStrength());
         }
-        if(player.getHealth()<= 0){
-            System.out.println("You were defeated!! Try again! " );
+        if (player.getHealth() <= 0) {
+            System.out.println("You were defeated!! Try again! ");
         }
     }
-
-
 
 
     public String getName() {

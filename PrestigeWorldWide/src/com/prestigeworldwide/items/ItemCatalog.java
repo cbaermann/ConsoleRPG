@@ -1,8 +1,8 @@
 package com.prestigeworldwide.items;
 
+
 import com.prestigeworldwide.players.Player;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -26,5 +26,21 @@ public class ItemCatalog {
             new Items(12L, "Force Field", 50, "increases defense by 50", ItemType.RARE)
     );
 
+//    public Items findById(Long id) {
+//        for (Items t : itemCatalog) {
+//            if (t.getId().equals(id)) {
+//                return t;
+//            }
+//        }
+//        return null;
+//    }
 
+    public Collection<Items> findByID(Long id, Player player) {
+        for (Items i : itemCatalog) {
+            if (i.getId().equals(id)) {
+                player.playerItems.add(i);
+            }
+        }
+        return player.playerItems;
+    }
 }

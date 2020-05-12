@@ -8,23 +8,23 @@ import java.util.List;
 
 public class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
+    public List<Items> playerItems = new ArrayList<>();
     private String name;
     private int health;
     private int strength;
     private int defence;
     private int numItems;
-    public List<Items> playerItems = new ArrayList<>();
 
-    public Player(){
+    public Player() {
 
     }
 
     public void playerAttack(Enemy enemy) {
-        if(enemy.getHealth() > 0) {
+        if (enemy.getHealth() > 0) {
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
             enemy.setHealth(enemy.getHealth() - this.getStrength());
         }
-        if(enemy.getHealth()<= 0){
+        if (enemy.getHealth() <= 0) {
             System.out.println("You defeated " + enemy.getName());
         }
 
@@ -32,34 +32,32 @@ public class Player {
 //    public void defend();
 
     //Not actual implementation, checking to make sure heal method works
-    public void heal(){
-        setHealth(this.health +10);
+    public void heal() {
+        setHealth(this.health + 10);
         System.out.println("Your health is now " + getHealth());
     }
 
-    public void showPlayerItems(){
-        if(!playerItems.isEmpty()) {
+    public void showPlayerItems() {
+        if (!playerItems.isEmpty()) {
             for (Items item : playerItems) {
                 System.out.println(item);
 //                System.out.println("No items currently in your inventory");
             }
-        }
-        else {
+        } else {
             System.out.println("No items currently in your inventory \n");
-            }
         }
+    }
 
 
     public int getHealth() {
         return health;
     }
 
-        //create method to have if check for every attribute
-    public void setHealth(int health) throws IllegalArgumentException{
-        if(this.health <= MAX_ATTRIBUTE_LEVEL) {
+    //create method to have if check for every attribute
+    public void setHealth(int health) throws IllegalArgumentException {
+        if (this.health <= MAX_ATTRIBUTE_LEVEL) {
             this.health = health;
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("Can not exceed 100 for an attribute");
         }
     }
@@ -98,7 +96,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return  " health=" + getHealth() + "\n" +
+        return " health=" + getHealth() + "\n" +
                 " strength=" + getStrength() + "\n" +
                 " defence=" + getDefence() + "\n";
     }

@@ -1,7 +1,6 @@
 package com.prestigeworldwide.scanner;
 
-import com.prestigeworldwide.enemies.Enemy;
-import com.prestigeworldwide.enemies.RoomOneEnemy;
+import com.prestigeworldwide.enemies.*;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.world.World;
 
@@ -10,7 +9,11 @@ import java.util.Scanner;
 public class GamePlay {
 
     public Player player;
-    public Enemy enemy = new RoomOneEnemy();
+    public Enemy enemy;
+    private int currentRoom = 1;
+//    public Enemy enemy2 = new RoomTwoEnemy();
+//    public Enemy enemy3 = new RoomThreeEnemy();
+
     Scanner scanner = new Scanner(System.in);
     String input;
 
@@ -18,7 +21,7 @@ public class GamePlay {
         System.out.println("Welcome to Prestige World Wide");
     }
 
-    public void chosePlayer(){
+    public void choosePlayer(){
         System.out.println("Who do you choose..." +
                 "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
         input = scanner.nextLine();
@@ -28,40 +31,62 @@ public class GamePlay {
         System.out.println("Would you like to begin your journey? (y/n)");
         input = scanner.nextLine();
         if(input.equalsIgnoreCase("y")){
-            begining();
+            beginning();
         }
         else{
             System.out.println("Well you kind of have no choice");
-            begining();
+            beginning();
         }
     }
 
-    public void begining(){
+    public void beginning(){
         World w = new World();
         w.startPoint();
         System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
         if(input.equalsIgnoreCase("y")){
+            enemy = EnemyGameplayFactory.createEnemy(currentRoom);
             System.out.println("you encountered " + enemy.getName() +
                     "\n" + enemy.toString());
+            if(enemy.getHealth() > 0 && player.getHealth() > 0){
+                battlePrompt();
+            }
+            if(enemy.getHealth() <= 0){
+                currentRoom++;
+                partTwo();
+            }
+            if(player.getHealth() <=0){
+                System.out.println("You have been defeated");
+                choosePlayer();
+            }
+        }
+    }
+
+    public void partTwo(){
+        World w = new World();
+//        w.startPoint();
+        System.out.println("Enter Room Two? y/n");
+        input = scanner.nextLine();
+        if(input.equalsIgnoreCase("y")){
+            enemy = EnemyGameplayFactory.createEnemy(currentRoom);
+            System.out.println("\nOh no! You encountered the most annoying person ever, " +
+                    enemy.getName() + "! " + "\n" + enemy.toString());
             if(enemy.getHealth() > 0){
                 battlePrompt();
             }
             if(enemy.getHealth() <= 0){
-                partTwo();
+                currentRoom++;
+                partThree();
+            }
+            if(input.equalsIgnoreCase("n")){
+                w.startPoint();
             }
         }
-
     }
 
-    public void partTwo(){
-        System.out.println("\n \n \n \n");
-        System.out.println("Hey part two");
+    public void partThree(){
+        System.out.println("\n\n\n Part Three under construction");
     }
-
-
-
-
 
 
 
@@ -73,17 +98,23 @@ public class GamePlay {
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
+                if (enemy.getHealth() > 0) {
+                    enemy.enemyAttack(player);
+                }
+                healthStatus();
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();
             }
             if (input.equalsIgnoreCase("q")) {
-                chosePlayer();
+                choosePlayer();
             }
         }
     }
 
-
-
-
+    //Helper method
+    public void healthStatus(){
+        System.out.println(player.getName() +" health= " + player.getHealth());
+        System.out.println(enemy.getName() +" health= " + enemy.getHealth());
+    }
 }

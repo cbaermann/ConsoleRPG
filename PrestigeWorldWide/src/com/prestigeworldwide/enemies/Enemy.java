@@ -2,7 +2,7 @@ package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
 
-public abstract class Enemy {
+public class Enemy {
     private String name;
     private int health;
     private int strength;
@@ -19,7 +19,7 @@ public abstract class Enemy {
         }
     }
 
-    public abstract int defend(Player player);
+    //public int defend(Player player);
 
 
 

@@ -1,5 +1,7 @@
 package com.prestigeworldwide.enemies;
 
+import com.prestigeworldwide.players.Player;
+
 public class RoomTwoEnemy extends Enemy{
 
     public RoomTwoEnemy() {
@@ -9,13 +11,13 @@ public class RoomTwoEnemy extends Enemy{
         setStrength(4);
     }
 
-    @Override
-    public int attack() {
-        return 0;
-    }
+    /*@Override
+    public void attack(Player player) {
+
+    }*/
 
     @Override
-    public int defend() {
+    public int defend(Player player) {
         return 0;
     }
 }

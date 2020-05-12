@@ -1,5 +1,7 @@
 package com.prestigeworldwide.enemies;
 
+import com.prestigeworldwide.players.Player;
+
 import java.sql.Date;
 
 public abstract class Enemy {
@@ -18,9 +20,17 @@ public abstract class Enemy {
         this.defence = defence;
     }
 
-    public abstract int attack();
+    public void attack(Player player) {
+        if(player.getHealth() > 0) {
+            System.out.println(getName() + " attacked for " + getStrength() + " damage");
+            player.setHealth(player.getHealth() - this.getStrength());
+        }
+        if(player.getHealth()< 0){
+            System.out.println("You were defeated!! Try again! " );
+        }
+    }
 
-    public abstract int defend();
+    public abstract int defend(Player player);
 
 
 

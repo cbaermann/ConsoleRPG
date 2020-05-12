@@ -20,7 +20,7 @@ public class PrestigeWorldWideClient {
         p.chosePlayer();
 
 
-//        p.begining();
+//        p.beginning();
 
 
 //        Player e = new Elf();
@@ -41,7 +41,7 @@ public class PrestigeWorldWideClient {
         Enemy e = new RoomOneEnemy();
 
         pl.attack(e);
-        e.attack();
+        e.attack(pl);
 
 //        Player p = new Dwarf();
 //        Enemy e = new RoomOneEnemy();

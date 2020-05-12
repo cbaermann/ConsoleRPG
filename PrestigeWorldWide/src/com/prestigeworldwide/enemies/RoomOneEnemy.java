@@ -5,7 +5,6 @@ public class RoomOneEnemy extends Enemy {
     public RoomOneEnemy(String a, int b, int c, int d) {
     }
 
-
     public RoomOneEnemy() {
         setName("Robert");
         setDefence(4);

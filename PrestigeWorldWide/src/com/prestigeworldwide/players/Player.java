@@ -33,7 +33,6 @@ public class Player {
         }
     }
 
-    //Not actual implementation, checking to make sure heal method works
     public void heal() {
         setHealth(this.health + 10);
         System.out.println("Your health is now " + getHealth());

@@ -2,7 +2,7 @@ package com.prestigeworldwide.gameplay;
 
 import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
-import com.prestigeworldwide.world.World;
+import com.prestigeworldwide.rooms.World;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class GamePlay {
     Scanner scanner = new Scanner(System.in);
 
     public void title() {
-        System.out.println("Welcome to Prestige World Wide");
+        System.out.println("Welcome to Prestige World Wide \n \n");
         choosePlayer();
     }
 
@@ -25,7 +25,6 @@ public class GamePlay {
         System.out.println("Who do you choose..." +
                 "\n 1. Brennan \n 2. Nancy \n 3. Dale");
         input = scanner.nextLine();
-        System.out.println("This is the input " + input);
         player = PlayerGameplayFactory.createPlayer(input);
         System.out.println("You chose " + player.getName() + ". " +
                 "\n Base stats are as follows: \n" + player.toString());
@@ -36,6 +35,7 @@ public class GamePlay {
         }
         if (input.equalsIgnoreCase("n")) {
             System.out.println("Well you kind of have no choice");
+            beginning();
 
         } else {
             System.out.println("Invalid input");
@@ -85,10 +85,13 @@ public class GamePlay {
                 currentRoom++;
                 partThree();
             }
-            if (input.equalsIgnoreCase("n")) {
-                System.out.println("Invalid input");
-                partTwo();
-            }
+        }
+        if (input.equalsIgnoreCase("n")) {
+            choosePlayer();
+        }
+        else{
+            System.out.println("invalid input");
+            partTwo();
         }
     }
 
@@ -112,13 +115,17 @@ public class GamePlay {
                     choosePlayer();
                 }
                 if(input.equalsIgnoreCase("n")){
-                    System.out.println("Thanks for playing");
+                    System.out.println("Thank you for playing");
                     System.exit(0);
                 }
             }
         }
         if (input.equalsIgnoreCase("n")) {
-            w.startPoint();
+            choosePlayer();
+        }
+        else{
+            System.out.println("Invalid input");
+            partThree();
         }
     }
 

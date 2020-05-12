@@ -18,4 +18,5 @@ public class RoomOneEnemy extends Enemy{
     public int defend() {
         return 0;
     }
+
 }

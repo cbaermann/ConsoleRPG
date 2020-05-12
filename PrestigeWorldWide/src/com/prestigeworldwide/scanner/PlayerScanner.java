@@ -44,9 +44,39 @@ public class PlayerScanner{
         System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
         if(input.equals("y")){
-            w.roomOne(player, enemy);
+            System.out.println("you encountered " + enemy.getName() +
+            "\n" + enemy.toString());
+            if(enemy.getHealth() > 0){
+                battlePrompt();
+            }
+            if(enemy.getHealth() <= 0){
+                partTwo();
+            }
         }
 
+
+    }
+
+    public void partTwo(){
+        System.out.println("\n \n \n \n");
+        System.out.println("Hey part two");
+    }
+
+    public void battlePrompt(){
+        while(enemy.getHealth() > 0) {
+            System.out.println("Attack , Heal, or quit?  [a,h,q]");
+
+            input = scanner.nextLine();
+            if (input.equals("a")) {
+                player.attack(enemy);
+            }
+            if (input.equals("h")) {
+                player.heal();
+            }
+            if (input.equals("q")) {
+                chosePlayer();
+            }
+        }
     }
 
 

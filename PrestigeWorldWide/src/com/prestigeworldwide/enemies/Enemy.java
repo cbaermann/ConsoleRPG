@@ -45,4 +45,11 @@ public abstract class Enemy {
     public void setDefence(int defence) {
         this.defence = defence;
     }
+
+    @Override
+    public String toString() {
+        return " health=" + getHealth() + "\n" +
+                " strength=" + getStrength() + "\n" +
+                " defence=" + getDefence() + "\n";
+    }
 }

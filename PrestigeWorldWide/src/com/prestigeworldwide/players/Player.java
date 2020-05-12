@@ -24,9 +24,8 @@ public abstract class Player {
 
     //Not actual implementation, checking to make sure heal method works
     public void heal(){
-        if(numItems > 0){
-            setHealth(this.health +10);
-        }
+        setHealth(this.health +10);
+        System.out.println("Your health is now " + getHealth());
     }
 
     public void showPlayerItems(){

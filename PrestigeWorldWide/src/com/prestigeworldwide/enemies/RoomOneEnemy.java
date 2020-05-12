@@ -8,6 +8,4 @@ public class RoomOneEnemy extends Enemy {
         setHealth(3);
         setStrength(1);
     }
-
-
 }

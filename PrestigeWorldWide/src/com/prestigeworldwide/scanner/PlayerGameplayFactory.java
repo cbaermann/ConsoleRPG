@@ -1,9 +1,9 @@
 package com.prestigeworldwide.scanner;
 
-import com.prestigeworldwide.players.Dwarf;
-import com.prestigeworldwide.players.Elf;
+import com.prestigeworldwide.players.Brennan;
+import com.prestigeworldwide.players.Dale;
+import com.prestigeworldwide.players.Nancy;
 import com.prestigeworldwide.players.Player;
-import com.prestigeworldwide.players.Wizard;
 
 public class PlayerGameplayFactory {
 
@@ -14,13 +14,13 @@ public class PlayerGameplayFactory {
     public static Player createPlayer(String playerNum) {
         Player player = null;
         if (playerNum.equals("1")) {
-            player = new Elf();
+            player = new Brennan();
         }
         if (playerNum.equals("2")) {
-            player = new Wizard();
+            player = new Nancy();
         }
         if (playerNum.equals("3")) {
-            player = new Dwarf();
+            player = new Dale();
         }
         //not working. If this calls choosePlayer again, it will not let you chose a new player.
 //        else{

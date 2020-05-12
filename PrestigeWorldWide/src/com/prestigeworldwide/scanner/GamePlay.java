@@ -4,18 +4,18 @@ import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.world.World;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GamePlay {
 
     public Player player;
     public Enemy enemy;
-    private int currentRoom = 1;
+    Scanner scanner = new Scanner(System.in);
 //    public Enemy enemy2 = new RoomTwoEnemy();
 //    public Enemy enemy3 = new RoomThreeEnemy();
-
-    Scanner scanner = new Scanner(System.in);
     String input;
+    private int currentRoom = 1;
 
     public void title() {
         System.out.println("Welcome to Prestige World Wide");
@@ -97,38 +97,58 @@ public class GamePlay {
                 battlePrompt();
             }
             if (enemy.getHealth() <= 0) {
-                System.out.println("Congrats! You are the champion and can now sing " +
-                        "Por Ti Volare at the Catalina Wine Mixer!");
+                System.out.println("\nCongrats! You are the champion and can now sing " +
+                        "\nPor Ti Volare at the Catalina Wine Mixer!");
             }
-            if (input.equalsIgnoreCase("n")) {
-                w.startPoint();
-            }
+        }
+        if (input.equalsIgnoreCase("n")) {
+            w.startPoint();
         }
     }
 
     public void battlePrompt() {
         while (enemy.getHealth() > 0 && player.getHealth() > 0) {
-            System.out.println("Attack , Heal, or quit?  [a,h,q]");
+            System.out.println("Attack, Defend, Heal, or quit?  [a,d,h,q]");
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
             }
+            if (input.equalsIgnoreCase("d")) {
+                player.playerDefend(enemy);
+            }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();
-                if (player.getHealth() <= 0) {
-                }
             }
             if (input.equalsIgnoreCase("q")) {
                 choosePlayer();
             }
-            enemy.enemyAttack(player);
+            enemyAction();
             healthStatus();
+        }
+        if (player.getHealth() <= 0) {
+            choosePlayer();
+        }
+    }
+
+    public void enemyAction() {
+        Random rand = new Random();
+        int result = rand.nextInt(10 - 1) + 1;
+        if (result > 0 && result <= 5) {
+            enemy.enemyAttack(player);
+            System.out.println(result);
+        }
+        if (result > 5 && result < 9) {
+            enemy.enemyDefend(player);
+            System.out.println(result);
+        }
+        if (result == 9) {
+            enemy.enemyHeal();
         }
     }
 
     //Helper method
     public void healthStatus() {
-            System.out.println("\n" + player.getName() + " health= " + player.getHealth());
-            System.out.println(enemy.getName() + " health= " + enemy.getHealth());
+        System.out.println("\n" + player.getName() + " health= " + player.getHealth());
+        System.out.println(enemy.getName() + " health= " + enemy.getHealth());
     }
 }

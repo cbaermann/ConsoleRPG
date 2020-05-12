@@ -1,14 +1,11 @@
 package com.prestigeworldwide.players;
 
 import com.prestigeworldwide.enemies.Enemy;
-import com.prestigeworldwide.items.Items;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
-    public List<Items> playerItems = new ArrayList<>();
     private String name;
     private int health;
     private int strength;
@@ -29,23 +26,21 @@ public class Player {
         }
 
     }
-//    public void defend();
+
+    public void playerDefend(Enemy enemy) {
+        int result = enemy.getStrength() - this.getDefence();
+        if (result <= 0) {
+            System.out.println(enemy.getName() + "did no damage");
+        } else {
+            this.setHealth(this.health - result);
+            System.out.println(enemy.getName() + " did " + result + " damage");
+        }
+    }
 
     //Not actual implementation, checking to make sure heal method works
     public void heal() {
         setHealth(this.health + 10);
         System.out.println("Your health is now " + getHealth());
-    }
-
-    public void showPlayerItems() {
-        if (!playerItems.isEmpty()) {
-            for (Items item : playerItems) {
-                System.out.println(item);
-//                System.out.println("No items currently in your inventory");
-            }
-        } else {
-            System.out.println("No items currently in your inventory \n");
-        }
     }
 
 
@@ -76,14 +71,6 @@ public class Player {
 
     public void setDefence(int defence) {
         this.defence = defence;
-    }
-
-    public int getNumItems() {
-        return numItems;
-    }
-
-    public void setNumItems(int numItems) {
-        this.numItems = numItems;
     }
 
     public String getName() {

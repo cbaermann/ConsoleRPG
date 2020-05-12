@@ -1,18 +1,12 @@
 package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
-import com.prestigeworldwide.scanner.GamePlay;
 
 public class Enemy {
     private String name;
     private int health;
     private int strength;
     private int defence;
-
-
-    //public abstract int defend(Player player);
-//    public abstract int enemyAttack();
-
 
 
     public void enemyAttack(Player player) {
@@ -22,8 +16,24 @@ public class Enemy {
         }
         if (player.getHealth() <= 0) {
             System.out.println("You were defeated!! Try again! ");
-
         }
+    }
+
+    public void enemyDefend(Player player) {
+        int result = player.getStrength() - this.getDefence();
+        if (result <= 0) {
+            System.out.println("negative result" + result);
+            System.out.println(player.getName() + " did no damage");
+        } else {
+            System.out.println("should do damage result" + result);
+            this.setHealth(this.health - result);
+            System.out.println(player.getName() + " did " + result + " damage");
+        }
+    }
+
+    public void enemyHeal() {
+        setHealth(this.health + 10);
+        System.out.println(this.getName() + " healed. Health is now: " + getHealth());
     }
 
 

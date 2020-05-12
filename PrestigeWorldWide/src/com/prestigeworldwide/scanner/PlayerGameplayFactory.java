@@ -22,12 +22,11 @@ public class PlayerGameplayFactory {
         if (playerNum.equals("3")) {
             player = new Dwarf();
         }
-        //not working. If this calls choosePlayer again, it will not let you chose a new player.
-//        else{
-//            PlayerScanner ps = new PlayerScanner();
-//            System.out.println("You must choose an option of 1, 2 or 3.");
-//            ps.chosePlayer();
-//        }
+        else{
+            GamePlay ps = new GamePlay();
+            System.out.println("You must choose an option of 1, 2 or 3.");
+            ps.choosePlayer();
+        }
 
         return player;
     }

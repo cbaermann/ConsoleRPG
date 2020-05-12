@@ -31,9 +31,14 @@ public class GamePlay {
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
             beginning();
-        } else {
+        }
+        if(input.equalsIgnoreCase("n")) {
             System.out.println("Well you kind of have no choice");
             beginning();
+        }
+        else{
+            System.out.println("Invalid input");
+            choosePlayer();
         }
     }
 
@@ -55,6 +60,13 @@ public class GamePlay {
                 System.out.println("You have been defeated");
                 choosePlayer();
             }
+        }
+        if(input.equalsIgnoreCase("n")){
+            choosePlayer();
+        }
+        else{
+            System.out.println("Invalid input");
+            beginning();
         }
     }
 

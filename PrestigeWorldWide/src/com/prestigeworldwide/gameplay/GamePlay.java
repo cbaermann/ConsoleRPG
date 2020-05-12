@@ -11,10 +11,17 @@ public class GamePlay {
 
     public Player player;
     public Enemy enemy;
+<<<<<<< HEAD:PrestigeWorldWide/src/com/prestigeworldwide/gameplay/GamePlay.java
     private int currentRoom = 1;
 
     Scanner scanner = new Scanner(System.in);
+=======
+    Scanner scanner = new Scanner(System.in);
+//    public Enemy enemy2 = new RoomTwoEnemy();
+//    public Enemy enemy3 = new RoomThreeEnemy();
+>>>>>>> Kervin:PrestigeWorldWide/src/com/prestigeworldwide/scanner/GamePlay.java
     String input;
+    private int currentRoom = 1;
 
     public void title() {
         System.out.println("Welcome to Prestige World Wide");
@@ -72,7 +79,6 @@ public class GamePlay {
 
     public void partTwo() {
         World w = new World();
-//        w.startPoint();
         System.out.println("\nEnter Room Two? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -93,7 +99,24 @@ public class GamePlay {
     }
 
     public void partThree() {
-        System.out.println("\n\n\n Part Three under construction");
+        World w = new World();
+        System.out.println("\nEnter Room Three? y/n");
+        input = scanner.nextLine();
+        if (input.equalsIgnoreCase("y")) {
+            enemy = EnemyGameplayFactory.createEnemy(currentRoom);
+            System.out.println("\nDUN, DUN, DUN! The evil brother is here " +
+                    enemy.getName() + "! " + "\n" + enemy.toString());
+            if (enemy.getHealth() > 0 && player.getHealth() > 0) {
+                battlePrompt();
+            }
+            if (enemy.getHealth() <= 0) {
+                System.out.println("\nCongrats! You are the champion and can now sing " +
+                        "\nPor Ti Volare at the Catalina Wine Mixer!");
+            }
+        }
+        if (input.equalsIgnoreCase("n")) {
+            w.startPoint();
+        }
     }
 
     public void battlePrompt() {
@@ -102,9 +125,12 @@ public class GamePlay {
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
+<<<<<<< HEAD:PrestigeWorldWide/src/com/prestigeworldwide/gameplay/GamePlay.java
                 if (enemy.getHealth() > 0) {
                     enemyAction();
                 }
+=======
+>>>>>>> Kervin:PrestigeWorldWide/src/com/prestigeworldwide/scanner/GamePlay.java
             }
             if (input.equalsIgnoreCase("d")) {
                 player.playerDefend(enemy);
@@ -116,10 +142,34 @@ public class GamePlay {
             if (input.equalsIgnoreCase("q")) {
                 choosePlayer();
             }
+<<<<<<< HEAD:PrestigeWorldWide/src/com/prestigeworldwide/gameplay/GamePlay.java
             healthStatus();
         }
         if(player.getHealth() <= 0){
             choosePlayer();
+=======
+            enemyAction();
+            healthStatus();
+        }
+        if (player.getHealth() <= 0) {
+            choosePlayer();
+        }
+    }
+
+    public void enemyAction() {
+        Random rand = new Random();
+        int result = rand.nextInt(10 - 1) + 1;
+        if (result > 0 && result <= 5) {
+            enemy.enemyAttack(player);
+            System.out.println(result);
+        }
+        if (result > 5 && result < 9) {
+            enemy.enemyDefend(player);
+            System.out.println(result);
+        }
+        if (result == 9) {
+            enemy.enemyHeal();
+>>>>>>> Kervin:PrestigeWorldWide/src/com/prestigeworldwide/scanner/GamePlay.java
         }
     }
 

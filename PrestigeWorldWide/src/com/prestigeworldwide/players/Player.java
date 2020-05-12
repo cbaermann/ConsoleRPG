@@ -1,8 +1,11 @@
 package com.prestigeworldwide.players;
 
 import com.prestigeworldwide.enemies.Enemy;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Kervin
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +29,21 @@ public class Player {
         }
 
     }
+<<<<<<< HEAD
     public void playerDefend(Enemy enemy){
         int result = enemy.getStrength() - this.getDefence();
         if(result <= 0){
             System.out.println(enemy.getName() + "did no damage");
         }
         else{
+=======
+
+    public void playerDefend(Enemy enemy) {
+        int result = enemy.getStrength() - this.getDefence();
+        if (result <= 0) {
+            System.out.println(enemy.getName() + "did no damage");
+        } else {
+>>>>>>> Kervin
             this.setHealth(this.health - result);
             System.out.println(enemy.getName() + " did " + result + " damage");
         }
@@ -43,7 +55,10 @@ public class Player {
         System.out.println("Your health is now " + getHealth());
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Kervin
 
     public int getHealth() {
         return health;

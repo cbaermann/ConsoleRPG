@@ -11,7 +11,7 @@ public class Elf extends Player{
     }
 
     @Override
-    public void attack(Enemy enemy) {
+    public void playerAttack(Enemy enemy) {
 
     }
 

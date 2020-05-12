@@ -10,7 +10,7 @@ public class RoomOneEnemy extends Enemy{
     }
 
     @Override
-    public int attack() {
+    public int enemyAttack() {
         return 0;
     }
 

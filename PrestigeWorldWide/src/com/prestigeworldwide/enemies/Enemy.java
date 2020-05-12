@@ -7,7 +7,7 @@ public abstract class Enemy {
     private int defence;
 
 
-    public abstract int attack();
+    public abstract int enemyAttack();
 
     public abstract int defend();
 

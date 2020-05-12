@@ -19,7 +19,7 @@ public abstract class Player {
 
     }
 
-    public abstract void attack(Enemy enemy);
+    public abstract void playerAttack(Enemy enemy);
     public abstract void defend();
 
     //Not actual implementation, checking to make sure heal method works

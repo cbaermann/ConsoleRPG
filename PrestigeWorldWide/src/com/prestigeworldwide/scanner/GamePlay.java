@@ -7,7 +7,7 @@ import com.prestigeworldwide.world.World;
 
 import java.util.Scanner;
 
-public class PlayerScanner{
+public class GamePlay {
 
     public Player player;
     public Enemy enemy = new RoomOneEnemy();
@@ -22,7 +22,7 @@ public class PlayerScanner{
             System.out.println("Who do you choose..." +
                     "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
             input = scanner.nextLine();
-            player = PlayerScannerFactory.createPlayer(input);
+            player = PlayerGameplayFactory.createPlayer(input);
         System.out.println("You chose " + player.getName() + ". " +
                 "\n Base stats are as follows: \n" + player.toString());
         System.out.println("Would you like to begin your journey? (y/n)");
@@ -72,7 +72,7 @@ public class PlayerScanner{
 
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
-                player.attack(enemy);
+                player.playerAttack(enemy);
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();

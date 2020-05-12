@@ -11,7 +11,7 @@ public class Wizard extends Player{
     }
 
     @Override
-    public void attack(Enemy enemy) {
+    public void playerAttack(Enemy enemy) {
         System.out.println("aarrggg");
 
     }

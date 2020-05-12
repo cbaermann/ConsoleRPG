@@ -7,15 +7,19 @@ public class Dwarf extends Player{
         setName("Dale");
         setDefence(10);
         setHealth(5);
-        setStrength(10);
+        setStrength(1);
     }
 
     @Override
     public void attack(Enemy enemy) {
-        System.out.println(getName() + " attacked for " + getStrength() + " damage");
-        System.out.println(enemy.getHealth());
-        enemy.setHealth(enemy.getHealth() - this.getStrength());
-        System.out.println(enemy.getHealth());
+        if(enemy.getHealth() > 0) {
+            System.out.println(getName() + " attacked for " + getStrength() + " damage");
+            enemy.setHealth(enemy.getHealth() - this.getStrength());
+        }
+        if(enemy.getHealth()< 0){
+            System.out.println("You defeated " + enemy.getName());
+        }
+
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.prestigeworldwide.gameplay;
+package com.prestigeworldwide.scanner;
 
 import com.prestigeworldwide.players.Dwarf;
 import com.prestigeworldwide.players.Elf;
@@ -22,10 +22,11 @@ public class PlayerGameplayFactory {
         if (playerNum.equals("3")) {
             player = new Dwarf();
         }
+        //not working. If this calls choosePlayer again, it will not let you chose a new player.
 //        else{
-//            GamePlay ps = new GamePlay();
+//            PlayerScanner ps = new PlayerScanner();
 //            System.out.println("You must choose an option of 1, 2 or 3.");
-//            ps.choosePlayer();
+//            ps.chosePlayer();
 //        }
 
         return player;

@@ -3,9 +3,6 @@ package com.prestigeworldwide.players;
 import com.prestigeworldwide.enemies.Enemy;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
     private String name;

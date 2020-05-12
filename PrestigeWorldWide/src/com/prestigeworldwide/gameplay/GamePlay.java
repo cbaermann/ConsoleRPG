@@ -26,6 +26,7 @@ public class GamePlay {
         System.out.println("Who do you choose..." +
                 "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
         input = scanner.nextLine();
+        System.out.println("This is the input " + input);
         player = PlayerGameplayFactory.createPlayer(input);
         System.out.println("You chose " + player.getName() + ". " +
                 "\n Base stats are as follows: \n" + player.toString());
@@ -36,7 +37,7 @@ public class GamePlay {
         }
         if (input.equalsIgnoreCase("n")) {
             System.out.println("Well you kind of have no choice");
-            beginning();
+
         } else {
             System.out.println("Invalid input");
             choosePlayer();
@@ -72,7 +73,6 @@ public class GamePlay {
 
     public void partTwo() {
         World w = new World();
-//        w.startPoint();
         System.out.println("\nEnter Room Two? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -87,13 +87,40 @@ public class GamePlay {
                 partThree();
             }
             if (input.equalsIgnoreCase("n")) {
-                w.startPoint();
+                System.out.println("Invalid input");
+                partTwo();
             }
         }
     }
 
     public void partThree() {
-        System.out.println("\n\n\n Part Three under construction");
+        World w = new World();
+        System.out.println("\nEnter Room Three? y/n");
+        input = scanner.nextLine();
+        if (input.equalsIgnoreCase("y")) {
+            enemy = EnemyGameplayFactory.createEnemy(currentRoom);
+            System.out.println("\nDUN, DUN, DUN! The evil brother is here " +
+                    enemy.getName() + "! " + "\n" + enemy.toString());
+            if (enemy.getHealth() > 0 && player.getHealth() > 0) {
+                battlePrompt();
+            }
+            if (enemy.getHealth() <= 0) {
+                System.out.println("Congrats! You are the champion and can now sing " +
+                        "Por Ti Volare at the Catalina Wine Mixer!");
+                System.out.println("Would you like to play again? y/n");
+                input = scanner.nextLine();
+                if(input.equalsIgnoreCase("y")){
+                    choosePlayer();
+                }
+                if(input.equalsIgnoreCase("n")){
+                    System.out.println("Thanks for playing");
+                    System.exit(0);
+                }
+            }
+        }
+        if (input.equalsIgnoreCase("n")) {
+            w.startPoint();
+        }
     }
 
     public void battlePrompt() {

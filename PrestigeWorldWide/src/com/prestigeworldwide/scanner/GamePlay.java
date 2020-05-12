@@ -37,7 +37,7 @@ public class GamePlay {
             beginning();
         }
         else{
-            System.out.println("Not a valid input");
+            System.out.println("Invalid input");
             choosePlayer();
         }
     }
@@ -60,6 +60,13 @@ public class GamePlay {
                 System.out.println("You have been defeated");
                 choosePlayer();
             }
+        }
+        if(input.equalsIgnoreCase("n")){
+            choosePlayer();
+        }
+        else{
+            System.out.println("Invalid input");
+            beginning();
         }
     }
 

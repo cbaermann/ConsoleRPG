@@ -1,20 +1,17 @@
 package com.prestigeworldwide.players;
 
 import com.prestigeworldwide.enemies.Enemy;
-import com.prestigeworldwide.items.Items;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     public static final int MAX_ATTRIBUTE_LEVEL = 100;
-    public List<Items> playerItems = new ArrayList<>();
     private String name;
     private int health;
     private int strength;
     private int defence;
-    private int numItems;
-
     public Player() {
 
     }
@@ -75,14 +72,6 @@ public class Player {
 
     public void setDefence(int defence) {
         this.defence = defence;
-    }
-
-    public int getNumItems() {
-        return numItems;
-    }
-
-    public void setNumItems(int numItems) {
-        this.numItems = numItems;
     }
 
     public String getName() {

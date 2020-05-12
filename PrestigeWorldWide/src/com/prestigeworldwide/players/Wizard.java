@@ -10,14 +10,14 @@ public class Wizard extends Player{
         setHealth(10);
     }
 
-    @Override
-    public void attack(Enemy enemy) {
-        System.out.println("aarrggg");
-
-    }
-
-    @Override
-    public void defend() {
-
-    }
+//    @Override
+//    public void playerAttack(Enemy enemy) {
+//        System.out.println("aarrggg");
+//
+//    }
+//
+//    @Override
+//    public void defend() {
+//
+//    }
 }

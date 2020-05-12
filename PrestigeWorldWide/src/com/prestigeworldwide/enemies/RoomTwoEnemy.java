@@ -5,7 +5,7 @@ import com.prestigeworldwide.players.Player;
 public class RoomTwoEnemy extends Enemy{
 
     public RoomTwoEnemy() {
-        setName("Randy");
+        setName("Randy (Derek's Coworker)");
         setDefence(6);
         setHealth(5);
         setStrength(4);

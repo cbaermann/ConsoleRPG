@@ -1,9 +1,7 @@
 package com.prestigeworldwide.world;
 import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+
 public class World {
     public int currentRoom;
 
@@ -27,7 +25,7 @@ public class World {
 
         }
         System.out.println("Oh no, " + enemy.getName() + " is playing your drumset");
-        player.attack(enemy);
+        player.playerAttack(enemy);
     }
 
     public void roomTwo() {

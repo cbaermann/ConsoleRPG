@@ -2,25 +2,14 @@ package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
 
-import java.sql.Date;
-
 public abstract class Enemy {
     private String name;
     private int health;
     private int strength;
     private int defence;
 
-    public Enemy (){
-    }
 
-    public Enemy(String name, int health, int strength, int defence) {
-        this.name = name;
-        this.health = health;
-        this.strength = strength;
-        this.defence = defence;
-    }
-
-    public void attack(Player player) {
+    public void enemyAttack(Player player) {
         if(player.getHealth() > 0) {
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
             player.setHealth(player.getHealth() - this.getStrength());

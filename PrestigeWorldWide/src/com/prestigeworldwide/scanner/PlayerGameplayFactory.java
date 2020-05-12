@@ -5,9 +5,9 @@ import com.prestigeworldwide.players.Elf;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.players.Wizard;
 
-public class PlayerScannerFactory {
+public class PlayerGameplayFactory {
 
-    private PlayerScannerFactory(){
+    private PlayerGameplayFactory(){
 
     }
 

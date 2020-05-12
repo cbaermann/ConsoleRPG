@@ -12,7 +12,7 @@ public class RoomOneEnemy extends Enemy{
         setName("Robert");
         setDefence(4);
         setHealth(3);
-        setStrength(3);
+        setStrength(1);
     }
 
 
@@ -30,11 +30,10 @@ public class RoomOneEnemy extends Enemy{
     @Override
     //work in progress
     public int defend(Player player) {
-        if (player.getHealth() > 0) {
-            player.setHealth(player.getHealth() - this.getStrength()); //needs to change
-
-        }
+//        if (player.getHealth() > 0) {
+//            player.setHealth(player.getHealth() - this.getStrength()); //needs to change
+//
+//        }
         return 0;
     }
-
 }

@@ -64,18 +64,12 @@ public class GamePlay {
     }
 
 
-<<<<<<< HEAD
-    public void battlePrompt() {
-        while (enemy.getHealth() > 0 && player.getHealth() > 0) {
-=======
-
 
 
 
 
     public void battlePrompt(){
         while(enemy.getHealth() > 0 && player.getHealth() > 0) {
->>>>>>> cody
             System.out.println("Attack, Defend, Heal, or quit?  [a,d,h,q]");
 
             input = scanner.nextLine();
@@ -86,11 +80,7 @@ public class GamePlay {
                 }
             }
             if(input.equalsIgnoreCase("d")){
-<<<<<<< HEAD
                 player.playerDefend(enemy);
-=======
-                player.defend(enemy);
->>>>>>> cody
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();

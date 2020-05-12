@@ -19,17 +19,15 @@ public class PlayerScanner{
     }
 
     public void chosePlayer(){
-//        Scanner scanner = new Scanner(System.in);
-//        String input;
             System.out.println("Who do you choose..." +
                     "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
             input = scanner.nextLine();
             player = PlayerScannerFactory.createPlayer(input);
-        System.out.println("You chose " + player.getName() + ". \n Base stats are as follows: \n" + player.toString());
-//        player.showPlayerItems();
+        System.out.println("You chose " + player.getName() + ". " +
+                "\n Base stats are as follows: \n" + player.toString());
         System.out.println("Would you like to begin your journey? (y/n)");
         input = scanner.nextLine();
-        if(input.equals("y")){
+        if(input.equalsIgnoreCase("y")){
             begining();
         }
         else{
@@ -43,7 +41,7 @@ public class PlayerScanner{
         w.startPoint();
         System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
-        if(input.equals("y")){
+        if(input.equalsIgnoreCase("y")){
             System.out.println("you encountered " + enemy.getName() +
             "\n" + enemy.toString());
             if(enemy.getHealth() > 0){
@@ -54,7 +52,6 @@ public class PlayerScanner{
             }
         }
 
-
     }
 
     public void partTwo(){
@@ -62,18 +59,25 @@ public class PlayerScanner{
         System.out.println("Hey part two");
     }
 
+
+
+
+
+
+
+
     public void battlePrompt(){
         while(enemy.getHealth() > 0) {
             System.out.println("Attack , Heal, or quit?  [a,h,q]");
 
             input = scanner.nextLine();
-            if (input.equals("a")) {
+            if (input.equalsIgnoreCase("a")) {
                 player.attack(enemy);
             }
-            if (input.equals("h")) {
+            if (input.equalsIgnoreCase("h")) {
                 player.heal();
             }
-            if (input.equals("q")) {
+            if (input.equalsIgnoreCase("q")) {
                 chosePlayer();
             }
         }

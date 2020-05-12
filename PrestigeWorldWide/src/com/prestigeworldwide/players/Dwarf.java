@@ -5,13 +5,13 @@ public class Dwarf extends Player{
         setName("Dale");
         setDefence(10);
         setHealth(5);
-        setLuck(1);
         setStrength(10);
     }
 
     @Override
-    public void attack() {
-
+    public int attack() {
+        System.out.println(getName() + "attacked for " + getStrength() + "damage");
+        return getStrength();
     }
 
     @Override

@@ -12,7 +12,6 @@ public abstract class Player {
     private int health;
     private int strength;
     private int defence;
-    private int luck;
     private int numItems;
     public List<Items> playerItems = new ArrayList<>();
 
@@ -20,7 +19,7 @@ public abstract class Player {
 
     }
 
-    public abstract void attack();
+    public abstract int attack();
     public abstract void defend();
 
     //Not actual implementation, checking to make sure heal method works
@@ -34,11 +33,11 @@ public abstract class Player {
         if(!playerItems.isEmpty()) {
             for (Items item : playerItems) {
                 System.out.println(item);
-                System.out.println("No items currently in your inventory");
+//                System.out.println("No items currently in your inventory");
             }
         }
         else {
-            System.out.println("No items currently in your inventory");
+            System.out.println("No items currently in your inventory \n");
             }
         }
 
@@ -78,14 +77,6 @@ public abstract class Player {
         this.defence = defence;
     }
 
-    public int getLuck() {
-        return luck;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
-    }
-
     public int getNumItems() {
         return numItems;
     }
@@ -106,7 +97,6 @@ public abstract class Player {
     public String toString() {
         return  " health=" + getHealth() + "\n" +
                 " strength=" + getStrength() + "\n" +
-                " defence=" + getDefence() + "\n" +
-                " luck=" + getLuck() + "\n";
+                " defence=" + getDefence() + "\n";
     }
 }

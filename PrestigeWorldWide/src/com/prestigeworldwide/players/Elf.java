@@ -1,5 +1,7 @@
 package com.prestigeworldwide.players;
 
+import com.prestigeworldwide.enemies.Enemy;
+
 public class Elf extends Player{
     public Elf(){
         setName("Brennan");
@@ -9,8 +11,8 @@ public class Elf extends Player{
     }
 
     @Override
-    public int attack() {
-        return getStrength();
+    public void attack(Enemy enemy) {
+
     }
 
     @Override

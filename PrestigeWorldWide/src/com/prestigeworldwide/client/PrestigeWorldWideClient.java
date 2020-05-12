@@ -1,7 +1,12 @@
 package com.prestigeworldwide.client;
 
+
 import com.prestigeworldwide.items.ItemCatalog;
 import com.prestigeworldwide.items.Items;
+
+import com.prestigeworldwide.enemies.Enemy;
+import com.prestigeworldwide.enemies.RoomOneEnemy;
+import com.prestigeworldwide.players.Dwarf;
 import com.prestigeworldwide.players.Elf;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.scanner.PlayerScanner;
@@ -28,7 +33,16 @@ public class PrestigeWorldWideClient {
 //                System.out.println(val);
 //            }
 //        }
+//        PlayerScanner p = new PlayerScanner();
+//        p.title();
+//        p.chosePlayer();
+        Player pl = new Dwarf();
+        Enemy e = new RoomOneEnemy();
 
+        pl.attack(e);
+        e.attack();
+
+        //Enemy rob = new RoomOneEnemy("Rob", 5, 5, 5);
 
     }
 }

@@ -1,11 +1,22 @@
 package com.prestigeworldwide.enemies;
 
+import java.sql.Date;
+
 public abstract class Enemy {
     private String name;
     private int health;
     private int strength;
     private int defence;
 
+    public Enemy (){
+    }
+
+    public Enemy(String name, int health, int strength, int defence) {
+        this.name = name;
+        this.health = health;
+        this.strength = strength;
+        this.defence = defence;
+    }
 
     public abstract int attack();
 

@@ -2,7 +2,6 @@ package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
 
-
 public class Enemy {
     private String name;
     private int health;

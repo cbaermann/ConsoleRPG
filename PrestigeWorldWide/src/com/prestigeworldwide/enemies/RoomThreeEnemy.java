@@ -1,8 +1,6 @@
 package com.prestigeworldwide.enemies;
 
-import com.prestigeworldwide.players.Player;
-
-public class RoomThreeEnemy extends Enemy{
+public class RoomThreeEnemy extends Enemy {
 
     public RoomThreeEnemy() {
         setName("Brennan's brother Derek");
@@ -15,8 +13,8 @@ public class RoomThreeEnemy extends Enemy{
     public void attack(Player player) {
     }*/
 
-    @Override
-    public int defend(Player player) {
-        return 0;
-    }
+//    @Override
+//    public int defend(Player player) {
+//        return 0;
+//    }
 }

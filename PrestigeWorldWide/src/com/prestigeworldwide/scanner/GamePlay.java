@@ -14,11 +14,12 @@ public class GamePlay {
     Scanner scanner = new Scanner(System.in);
     String input;
 
-    public void title(){
+    public void title() {
         System.out.println("Welcome to Prestige World Wide");
+        choosePlayer();
     }
 
-    public void chosePlayer(){
+    public void choosePlayer() {
         System.out.println("Who do you choose..." +
                 "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
         input = scanner.nextLine();
@@ -27,63 +28,58 @@ public class GamePlay {
                 "\n Base stats are as follows: \n" + player.toString());
         System.out.println("Would you like to begin your journey? (y/n)");
         input = scanner.nextLine();
-        if(input.equalsIgnoreCase("y")){
-            begining();
-        }
-        else{
+        if (input.equalsIgnoreCase("y")) {
+            beginning();
+        } else {
             System.out.println("Well you kind of have no choice");
-            begining();
+            beginning();
         }
     }
 
-    public void begining(){
+    public void beginning() {
         World w = new World();
         w.startPoint();
         System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
-        if(input.equalsIgnoreCase("y")){
+        if (input.equalsIgnoreCase("y")) {
             System.out.println("you encountered " + enemy.getName() +
                     "\n" + enemy.toString());
-            if(enemy.getHealth() > 0){
+            if (enemy.getHealth() > 0 && player.getHealth() > 0) {
                 battlePrompt();
             }
-            if(enemy.getHealth() <= 0){
+            if (enemy.getHealth() <= 0) {
                 partTwo();
             }
+            if (player.getHealth() <= 0) {
+                System.out.println("You have been defeated");
+                choosePlayer();
+            }
         }
-
     }
 
-    public void partTwo(){
+    public void partTwo() {
         System.out.println("\n \n \n \n");
         System.out.println("Hey part two");
     }
 
 
-
-
-
-
-
-
-    public void battlePrompt(){
-        while(enemy.getHealth() > 0) {
+    public void battlePrompt() {
+        while (enemy.getHealth() > 0 && player.getHealth() > 0) {
             System.out.println("Attack , Heal, or quit?  [a,h,q]");
 
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
+                if (enemy.getHealth() > 0) {
+                    enemy.enemyAttack(player);
+                }
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();
             }
             if (input.equalsIgnoreCase("q")) {
-                chosePlayer();
+                choosePlayer();
             }
         }
     }
-
-
-
-
 }

@@ -2,26 +2,28 @@ package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
 
-public abstract class Enemy {
+
+public class Enemy {
     private String name;
     private int health;
     private int strength;
     private int defence;
 
 
+    //public abstract int defend(Player player);
+//    public abstract int enemyAttack();
+
+
+
     public void enemyAttack(Player player) {
-        if(player.getHealth() > 0) {
+        if (player.getHealth() > 0) {
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
             player.setHealth(player.getHealth() - this.getStrength());
         }
-        if(player.getHealth()< 0){
-            System.out.println("You were defeated!! Try again! " );
+        if (player.getHealth() <= 0) {
+            System.out.println("You were defeated!! Try again! ");
         }
     }
-
-    public abstract int defend(Player player);
-
-
 
 
     public String getName() {

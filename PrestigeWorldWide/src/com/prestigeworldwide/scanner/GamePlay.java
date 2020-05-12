@@ -12,8 +12,6 @@ public class GamePlay {
     public Player player;
     public Enemy enemy;
     private int currentRoom = 1;
-//    public Enemy enemy2 = new RoomTwoEnemy();
-//    public Enemy enemy3 = new RoomThreeEnemy();
 
     Scanner scanner = new Scanner(System.in);
     String input;
@@ -105,7 +103,6 @@ public class GamePlay {
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
                 if (enemy.getHealth() > 0) {
-//                    enemy.enemyAttack(player);
                     enemyAction();
                 }
             }

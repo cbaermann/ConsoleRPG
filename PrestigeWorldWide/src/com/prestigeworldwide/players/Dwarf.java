@@ -5,7 +5,7 @@ public class Dwarf extends Player {
         setName("Dale");
         setDefence(10);
         setHealth(5);
-        setStrength(1);
+        setStrength(3);
     }
 
 }

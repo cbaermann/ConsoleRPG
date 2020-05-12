@@ -1,6 +1,6 @@
 package com.prestigeworldwide.scanner;
 
-import com.prestigeworldwide.enemies.*;
+import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
 import com.prestigeworldwide.world.World;
 
@@ -22,11 +22,7 @@ public class GamePlay {
         choosePlayer();
     }
 
-<<<<<<< HEAD
-    public void choosePlayer(){
-=======
     public void choosePlayer() {
->>>>>>> master
         System.out.println("Who do you choose..." +
                 "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
         input = scanner.nextLine();
@@ -35,115 +31,75 @@ public class GamePlay {
                 "\n Base stats are as follows: \n" + player.toString());
         System.out.println("Would you like to begin your journey? (y/n)");
         input = scanner.nextLine();
-<<<<<<< HEAD
-        if(input.equalsIgnoreCase("y")){
-            beginning();
-        }
-        else{
-=======
         if (input.equalsIgnoreCase("y")) {
             beginning();
         } else {
->>>>>>> master
-            System.out.println("Well you kind of have no choice");
-            beginning();
+            if (input.equalsIgnoreCase("y")) {
+                beginning();
+            } else {
+                System.out.println("Well you kind of have no choice");
+                beginning();
+            }
         }
     }
 
-<<<<<<< HEAD
-    public void beginning(){
-=======
+
     public void beginning() {
->>>>>>> master
         World w = new World();
         w.startPoint();
         System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
-<<<<<<< HEAD
-        if(input.equalsIgnoreCase("y")){
-            enemy = EnemyGameplayFactory.createEnemy(currentRoom);
-            System.out.println("you encountered " + enemy.getName() +
-                    "\n" + enemy.toString());
-            if(enemy.getHealth() > 0 && player.getHealth() > 0){
-                battlePrompt();
-            }
-            if(enemy.getHealth() <= 0){
-                currentRoom++;
-                partTwo();
-            }
-            if(player.getHealth() <=0){
-=======
         if (input.equalsIgnoreCase("y")) {
+            enemy = EnemyGameplayFactory.createEnemy(currentRoom);
             System.out.println("you encountered " + enemy.getName() +
                     "\n" + enemy.toString());
             if (enemy.getHealth() > 0 && player.getHealth() > 0) {
                 battlePrompt();
             }
             if (enemy.getHealth() <= 0) {
+                currentRoom++;
                 partTwo();
-            }
-            if (player.getHealth() <= 0) {
->>>>>>> master
-                System.out.println("You have been defeated");
-                choosePlayer();
             }
         }
     }
 
-<<<<<<< HEAD
-    public void partTwo(){
+
+    public void partTwo() {
         World w = new World();
 //        w.startPoint();
-        System.out.println("Enter Room Two? y/n");
+        System.out.println("\nEnter Room Two? y/n");
         input = scanner.nextLine();
-        if(input.equalsIgnoreCase("y")){
+        if (input.equalsIgnoreCase("y")) {
             enemy = EnemyGameplayFactory.createEnemy(currentRoom);
             System.out.println("\nOh no! You encountered the most annoying person ever, " +
                     enemy.getName() + "! " + "\n" + enemy.toString());
-            if(enemy.getHealth() > 0){
+            if (enemy.getHealth() > 0) {
                 battlePrompt();
             }
-            if(enemy.getHealth() <= 0){
+            if (enemy.getHealth() <= 0) {
                 currentRoom++;
                 partThree();
             }
-            if(input.equalsIgnoreCase("n")){
+            if (input.equalsIgnoreCase("n")) {
                 w.startPoint();
             }
         }
     }
 
-    public void partThree(){
+    public void partThree() {
         System.out.println("\n\n\n Part Three under construction");
     }
 
-
-
-
-    public void battlePrompt(){
-        while(enemy.getHealth() > 0) {
-=======
-    public void partTwo() {
-        System.out.println("\n \n \n \n");
-        System.out.println("Hey part two");
-    }
-
-
     public void battlePrompt() {
         while (enemy.getHealth() > 0 && player.getHealth() > 0) {
->>>>>>> master
             System.out.println("Attack , Heal, or quit?  [a,h,q]");
-
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
                 if (enemy.getHealth() > 0) {
                     enemy.enemyAttack(player);
                 }
-<<<<<<< HEAD
                 healthStatus();
-=======
->>>>>>> master
             }
             if (input.equalsIgnoreCase("h")) {
                 player.heal();
@@ -153,13 +109,10 @@ public class GamePlay {
             }
         }
     }
-<<<<<<< HEAD
 
     //Helper method
-    public void healthStatus(){
-        System.out.println(player.getName() +" health= " + player.getHealth());
-        System.out.println(enemy.getName() +" health= " + enemy.getHealth());
+    public void healthStatus() {
+        System.out.println("\n" + player.getName() + " health= " + player.getHealth());
+        System.out.println(enemy.getName() + " health= " + enemy.getHealth());
     }
-=======
->>>>>>> master
 }

@@ -2,10 +2,6 @@ package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 public class Enemy {
     private String name;
     private int health;
@@ -28,13 +24,6 @@ public class Enemy {
         }
     }
 
-<<<<<<< HEAD
-    //public int defend(Player player);
-
-
-
-=======
->>>>>>> master
 
     public String getName() {
         return name;

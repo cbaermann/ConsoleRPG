@@ -1,4 +1,4 @@
-package com.prestigeworldwide.scanner;
+package com.prestigeworldwide.gameplay;
 
 import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;

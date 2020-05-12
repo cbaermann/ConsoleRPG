@@ -1,8 +1,6 @@
 package com.prestigeworldwide.client;
 
-import com.prestigeworldwide.scanner.GamePlay;
-
-import java.util.Random;
+import com.prestigeworldwide.gameplay.GamePlay;
 
 
 public class PrestigeWorldWideClient {

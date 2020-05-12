@@ -10,8 +10,6 @@ public class World {
          System.out.println(" You awaken to the sound of someone playing drums" +
                  "\n but nobody plays your drums besides you" +
                  "\n go investigate");
-//         System.out.println("Currently in Room: " + currentRoom + " moving ahead one room");
-
 
      }
      public void roomOne(){

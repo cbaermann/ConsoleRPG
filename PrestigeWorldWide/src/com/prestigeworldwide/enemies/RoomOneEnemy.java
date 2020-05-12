@@ -9,14 +9,5 @@ public class RoomOneEnemy extends Enemy{
         setStrength(1);
     }
 
-//    @Override
-//    public int enemyAttack() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public int defend() {
-//        return 0;
-//    }
 
 }

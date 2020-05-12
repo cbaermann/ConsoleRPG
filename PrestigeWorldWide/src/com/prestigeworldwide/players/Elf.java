@@ -10,13 +10,4 @@ public class Elf extends Player{
         setStrength(8);
     }
 
-//    @Override
-//    public void playerAttack(Enemy enemy) {
-//
-//    }
-//
-//    @Override
-//    public void defend() {
-//
-//    }
 }

@@ -16,9 +16,10 @@ public class GamePlay {
 
     public void title(){
         System.out.println("Welcome to Prestige World Wide");
+        choosePlayer();
     }
 
-    public void chosePlayer(){
+    public void choosePlayer(){
             System.out.println("Who do you choose..." +
                     "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
             input = scanner.nextLine();
@@ -28,15 +29,15 @@ public class GamePlay {
         System.out.println("Would you like to begin your journey? (y/n)");
         input = scanner.nextLine();
         if(input.equalsIgnoreCase("y")){
-            begining();
+            beginning();
         }
         else{
             System.out.println("Well you kind of have no choice");
-            begining();
+            beginning();
         }
     }
 
-    public void begining(){
+    public void beginning(){
         World w = new World();
         w.startPoint();
         System.out.println("Would you like to continue forward? y/n");
@@ -52,10 +53,9 @@ public class GamePlay {
             }
             if(player.getHealth() <=0){
                 System.out.println("You have been defeated");
-                chosePlayer();
+                choosePlayer();
             }
         }
-
     }
 
     public void partTwo(){
@@ -84,7 +84,7 @@ public class GamePlay {
                 player.heal();
             }
             if (input.equalsIgnoreCase("q")) {
-                chosePlayer();
+                choosePlayer();
             }
         }
     }

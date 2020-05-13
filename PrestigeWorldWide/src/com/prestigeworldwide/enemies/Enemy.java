@@ -2,15 +2,13 @@ package com.prestigeworldwide.enemies;
 
 import com.prestigeworldwide.players.Player;
 
-import java.util.Random;
-
 public class Enemy {
     private String name;
     private int health;
     private int strength;
     private int defence;
 
-
+    //ATTACK THAT EFFECTS THE PLAYERS HEALTH
     public void enemyAttack(Player player) {
         if (player.getHealth() > 0) {
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
@@ -20,19 +18,17 @@ public class Enemy {
             System.out.println("You were defeated!! Try again! ");
         }
     }
-    //ENEMY DEFENDS AGAINST PLAYER
+    //DEFENCE AGAINST A PLAYER ATTACK
     public void enemyDefend(Player player) {
         int result = player.getStrength() - this.getDefence();
         if (result <= 0) {
-            System.out.println("negative result" + result);
             System.out.println(player.getName() + " did no damage");
         } else {
-            System.out.println("should do damage result" + result);
             this.setHealth(this.health - result);
             System.out.println(player.getName() + " did " + result + " damage");
         }
     }
-    //ENEMY INCREASES HEALTH ATTRIBUTE
+    //INCREASES ENEMY HEALTH
     public void enemyHeal() {
         setHealth(this.health + 10);
         System.out.println(this.getName() + " healed. Health is now: " + getHealth());
@@ -71,6 +67,7 @@ public class Enemy {
         this.defence = defence;
     }
 
+    //ENEMY STATS TO-STRING
     @Override
     public String toString() {
         return " health=" + getHealth() + "\n" +

@@ -8,10 +8,11 @@ public class Player {
     private int health;
     private int strength;
     private int defence;
+
     public Player() {
 
     }
-
+    //ATTACK THAT EFFECTS ENEMY HEALTH
     public void playerAttack(Enemy enemy) {
         if (enemy.getHealth() > 0) {
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
@@ -22,7 +23,7 @@ public class Player {
         }
 
     }
-
+    //DEFENDS AGAINST ENEMY ATTACK
     public void playerDefend(Enemy enemy) {
         int result = enemy.getStrength() - this.getDefence();
         if (result <= 0) {
@@ -32,18 +33,17 @@ public class Player {
             System.out.println(enemy.getName() + " did " + result + " damage");
         }
     }
-
-    public void heal() {
+    //INCREASES PLAYER HEALTH
+    public void playerHeal() {
         setHealth(this.health + 10);
         System.out.println("Your health is now " + getHealth());
     }
 
-
+    //GETTERS AND SETTERS
     public int getHealth() {
         return health;
     }
 
-    //create method to have if check for every attribute
     public void setHealth(int health) throws IllegalArgumentException {
         if (this.health <= MAX_ATTRIBUTE_LEVEL) {
             this.health = health;
@@ -75,7 +75,7 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
-
+    //PLAYER STATS TO-STRING
     @Override
     public String toString() {
         return " health=" + getHealth() + "\n" +

@@ -21,11 +21,10 @@ public class PlayerGameplayFactory {
         }
         if (playerNum.equals("3")) {
             player = new Dale();
+        } else {
+            System.out.println("You can not follow direction so we chose for you");
+            player = new Dale();
         }
-//        else{
-//            System.out.println("You cannot follow directions, so  we chose for you!");
-//
-//        }
 
         return player;
     }

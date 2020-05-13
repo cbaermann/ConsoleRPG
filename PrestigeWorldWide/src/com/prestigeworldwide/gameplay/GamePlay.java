@@ -16,7 +16,6 @@ public class GamePlay {
 
     public void title() {
         System.out.println("\nWelcome to Prestige World Wide \n");
-        choosePlayer();
     }
 
     //CHOOSE YOUR CHARACTER TO PLAY WITH
@@ -47,6 +46,10 @@ public class GamePlay {
         System.out.println(" You awaken to the sound of someone playing drums," +
                             "\n but nobody plays your drums besides you!!" +
                             "\nGo investigate? (y/n)");
+        System.out.println(" You awaken to the sound of someone playing drums" +
+                "\n but nobody plays your drums besides you" +
+                "\n go investigate");
+        System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
             enemy = EnemyGameplayFactory.createEnemy(currentRoom);
@@ -78,7 +81,7 @@ public class GamePlay {
         if (input.equalsIgnoreCase("y")) {
             enemy = EnemyGameplayFactory.createEnemy(currentRoom);
             System.out.println("\n OH NO! It's Derek's coworker, the most annoying person ever, " +
-                    enemy.getName() + "! " + "\n" + enemy.toString());
+                                enemy.getName() + "! " + "\n" + enemy.toString());
             if (enemy.getHealth() > 0) {
                 battlePrompt();
             }
@@ -89,8 +92,8 @@ public class GamePlay {
         }
         if (input.equalsIgnoreCase("n")) {
             choosePlayer();
-        } else {
-            System.out.println("Invalid input");
+        }else{
+            System.out.println("invalid input");
             partTwo();
         }
     }
@@ -124,11 +127,22 @@ public class GamePlay {
                 System.out.println("Invalid input");
                 choosePlayer();
                 }
+                System.out.println("Congrats! You are the champion and can now sing " +
+                        "Por Ti Volare at the Catalina Wine Mixer!");
+                System.out.println("Would you like to play again? y/n");
+                input = scanner.nextLine();
+                if(input.equalsIgnoreCase("y")){
+                    choosePlayer();
+                }
+                if(input.equalsIgnoreCase("n")){
+                    System.out.println("Thank you for playing");
+                    System.exit(0);
+                }
             }
         }
         if (input.equalsIgnoreCase("n")) {
             choosePlayer();
-        } else {
+        }else{
             System.out.println("Invalid input");
             partThree();
         }
@@ -182,4 +196,6 @@ public class GamePlay {
         System.out.println("\n" + "Your health= " + player.getHealth());
         System.out.println(enemy.getName() + "'s health= " + enemy.getHealth());
     }
+
+
 }

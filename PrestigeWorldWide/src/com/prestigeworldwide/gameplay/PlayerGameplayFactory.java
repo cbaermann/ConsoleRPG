@@ -21,7 +21,9 @@ public class PlayerGameplayFactory {
         }
         if (playerNum.equals("3")) {
             player = new Dale();
-        } else {
+
+        }
+        else{
             System.out.println("You can not follow direction so we chose for you");
             player = new Dale();
         }

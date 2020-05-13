@@ -33,6 +33,7 @@ public class Player {
             System.out.println(enemy.getName() + " did " + result + " damage");
         }
     }
+
     //INCREASES PLAYER HEALTH
     public void playerHeal() {
         setHealth(this.health + 10);

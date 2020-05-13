@@ -7,6 +7,7 @@ public class Dale extends Player {
         setDefence(10);
         setHealth(5);
         setStrength(10);
+
     }
 }
 

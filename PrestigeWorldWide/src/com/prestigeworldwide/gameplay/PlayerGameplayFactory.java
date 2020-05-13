@@ -22,11 +22,10 @@ public class PlayerGameplayFactory {
         if (playerNum.equals("3")) {
             player = new Dale();
         }
-//        else{
-//            GamePlay ps = new GamePlay();
-//            System.out.println("You must choose an option of 1, 2 or 3.");
-//            ps.choosePlayer();
-//        }
+        else{
+            System.out.println("You can not follow direction so we chose for you");
+            player = new Dale();
+        }
 
         return player;
     }

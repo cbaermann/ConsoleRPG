@@ -24,10 +24,8 @@ public class Enemy {
     public void enemyDefend(Player player) {
         int result = player.getStrength() - this.getDefence();
         if (result <= 0) {
-            System.out.println("negative result" + result);
             System.out.println(player.getName() + " did no damage");
         } else {
-            System.out.println("should do damage result" + result);
             this.setHealth(this.health - result);
             System.out.println(player.getName() + " did " + result + " damage");
         }

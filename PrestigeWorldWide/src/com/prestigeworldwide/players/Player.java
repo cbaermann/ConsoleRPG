@@ -33,7 +33,7 @@ public class Player {
         }
     }
 
-    public void heal() {
+    public void playerHeal() {
         setHealth(this.health + 10);
         System.out.println("Your health is now " + getHealth());
     }

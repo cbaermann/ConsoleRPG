@@ -2,8 +2,6 @@ package com.prestigeworldwide.gameplay;
 
 import com.prestigeworldwide.enemies.Enemy;
 import com.prestigeworldwide.players.Player;
-import com.prestigeworldwide.rooms.World;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -45,8 +43,9 @@ public class GamePlay {
 
 
     public void beginning() {
-        World w = new World();
-        w.startPoint();
+        System.out.println(" You awaken to the sound of someone playing drums" +
+                "\n but nobody plays your drums besides you" +
+                "\n go investigate");
         System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -71,7 +70,6 @@ public class GamePlay {
 
 
     public void partTwo() {
-        World w = new World();
         System.out.println("\nEnter Room Two? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -96,7 +94,6 @@ public class GamePlay {
     }
 
     public void partThree() {
-        World w = new World();
         System.out.println("\nEnter Room Three? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -141,7 +138,7 @@ public class GamePlay {
                 player.playerDefend(enemy);
             }
             if (input.equalsIgnoreCase("h")) {
-                player.heal();
+                player.playerHeal();
                 enemyAction();
             }
             if (input.equalsIgnoreCase("q")) {
@@ -158,16 +155,18 @@ public class GamePlay {
     public void enemyAction(){
         Random rand = new Random();
       int result = rand.nextInt(10 - 1) + 1;
-      if(result > 0 && result <= 5){
-          enemy.enemyAttack(player);
-          System.out.println(result);
-      }
-      if(result > 5 && result < 9){
-          enemy.enemyDefend(player);
-          System.out.println(result);
-      }
-      if(result == 9){
-          enemy.enemyHeal();
+      if(enemy.getHealth() > 0) {
+          if (result > 0 && result <= 5) {
+              enemy.enemyAttack(player);
+              System.out.println(result);
+          }
+          if (result > 5 && result < 9) {
+              enemy.enemyDefend(player);
+              System.out.println(result);
+          }
+          if (result == 9) {
+              enemy.enemyHeal();
+          }
       }
     }
 
@@ -176,4 +175,6 @@ public class GamePlay {
         System.out.println("\n" + player.getName() + " health= " + player.getHealth());
         System.out.println(enemy.getName() + " health= " + enemy.getHealth());
     }
+
+
 }

@@ -20,39 +20,25 @@ public class Enemy {
             System.out.println("You were defeated!! Try again! ");
         }
     }
-
-<<<<<<< HEAD
-    public void enemyDefend(Player player){
-        int result = player.getStrength() - this.getDefence();
-        if(result <= 0){
-            System.out.println("negative result" + result);
-            System.out.println(player.getName() + " did no damage");
-        }
-        else{
-=======
+    //ENEMY DEFENDS AGAINST PLAYER
     public void enemyDefend(Player player) {
         int result = player.getStrength() - this.getDefence();
         if (result <= 0) {
             System.out.println("negative result" + result);
             System.out.println(player.getName() + " did no damage");
         } else {
->>>>>>> Kervin
             System.out.println("should do damage result" + result);
             this.setHealth(this.health - result);
             System.out.println(player.getName() + " did " + result + " damage");
         }
     }
-
-<<<<<<< HEAD
-    public void enemyHeal(){
-=======
+    //ENEMY INCREASES HEALTH ATTRIBUTE
     public void enemyHeal() {
->>>>>>> Kervin
         setHealth(this.health + 10);
         System.out.println(this.getName() + " healed. Health is now: " + getHealth());
     }
 
-
+    //GETTERS AND SETTERS
     public String getName() {
         return name;
     }

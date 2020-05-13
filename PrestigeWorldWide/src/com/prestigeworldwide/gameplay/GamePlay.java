@@ -11,27 +11,18 @@ public class GamePlay {
 
     public Player player;
     public Enemy enemy;
-<<<<<<< HEAD:PrestigeWorldWide/src/com/prestigeworldwide/gameplay/GamePlay.java
     private int currentRoom = 1;
-
     Scanner scanner = new Scanner(System.in);
-=======
-    Scanner scanner = new Scanner(System.in);
-//    public Enemy enemy2 = new RoomTwoEnemy();
-//    public Enemy enemy3 = new RoomThreeEnemy();
->>>>>>> Kervin:PrestigeWorldWide/src/com/prestigeworldwide/scanner/GamePlay.java
     String input;
-    private int currentRoom = 1;
 
     public void title() {
         System.out.println("Welcome to Prestige World Wide");
         choosePlayer();
     }
 
-
     public void choosePlayer() {
-        System.out.println("Who do you choose..." +
-                "\n 1. Elf \n 2. Wizard \n 3. Dwarf");
+        System.out.println("\nWho do you choose..." +
+                "\n 1. Brennan \n 2. Nancy \n 3. Dale");
         input = scanner.nextLine();
         player = PlayerGameplayFactory.createPlayer(input);
         System.out.println("You chose " + player.getName() + ". " +
@@ -42,10 +33,10 @@ public class GamePlay {
             beginning();
         }
         if (input.equalsIgnoreCase("n")) {
-            System.out.println("Well you kind of have no choice");
+            System.out.println("\nWell you kind of have no choice");
             beginning();
         } else {
-            System.out.println("Invalid input");
+            System.out.println("Invalid input\n");
             choosePlayer();
         }
     }
@@ -118,19 +109,16 @@ public class GamePlay {
             w.startPoint();
         }
     }
-
+    //BATTLE OPTIONS - ATTACK - DEFEND - HEAL - QUITS
     public void battlePrompt() {
         while (enemy.getHealth() > 0 && player.getHealth() > 0) {
             System.out.println("Attack, Defend, Heal, or quit?  [a,d,h,q]");
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("a")) {
                 player.playerAttack(enemy);
-<<<<<<< HEAD:PrestigeWorldWide/src/com/prestigeworldwide/gameplay/GamePlay.java
                 if (enemy.getHealth() > 0) {
                     enemyAction();
                 }
-=======
->>>>>>> Kervin:PrestigeWorldWide/src/com/prestigeworldwide/scanner/GamePlay.java
             }
             if (input.equalsIgnoreCase("d")) {
                 player.playerDefend(enemy);
@@ -142,12 +130,10 @@ public class GamePlay {
             if (input.equalsIgnoreCase("q")) {
                 choosePlayer();
             }
-<<<<<<< HEAD:PrestigeWorldWide/src/com/prestigeworldwide/gameplay/GamePlay.java
             healthStatus();
         }
         if(player.getHealth() <= 0){
             choosePlayer();
-=======
             enemyAction();
             healthStatus();
         }
@@ -156,23 +142,7 @@ public class GamePlay {
         }
     }
 
-    public void enemyAction() {
-        Random rand = new Random();
-        int result = rand.nextInt(10 - 1) + 1;
-        if (result > 0 && result <= 5) {
-            enemy.enemyAttack(player);
-            System.out.println(result);
-        }
-        if (result > 5 && result < 9) {
-            enemy.enemyDefend(player);
-            System.out.println(result);
-        }
-        if (result == 9) {
-            enemy.enemyHeal();
->>>>>>> Kervin:PrestigeWorldWide/src/com/prestigeworldwide/scanner/GamePlay.java
-        }
-    }
-
+    //RANDOMIZED ENEMY RESPONSE
     public void enemyAction(){
         Random rand = new Random();
       int result = rand.nextInt(10 - 1) + 1;

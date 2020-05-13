@@ -1,6 +1,5 @@
 package com.prestigeworldwide.enemies;
 
-
 public class RoomThreeEnemy extends Enemy {
 
     public RoomThreeEnemy() {

@@ -8,9 +8,9 @@ public class World {
 
 
      public void startPoint() {
-         System.out.println(" You awaken to the sound of someone playing drums" +
-                 "\n but nobody plays your drums besides you" +
-                 "\n go investigate");
+         System.out.println(" You awaken to the sound of someone playing drums," +
+                 "\n but no one plays your drums besides you." +
+                 "\n Go investigate!");
      }
     public void roomOne() {
     }
@@ -36,12 +36,12 @@ public class World {
 
     }
 
-    public void roomOne(Player player, Enemy enemy) {
+    /*public void roomOne(Player player, Enemy enemy) {
         while (enemy.getHealth() > 0) {
 
         }
         System.out.println("Oh no, " + enemy.getName() + " is playing your drumset");
         player.playerAttack(enemy);
-    }
+    }*/
 
 }

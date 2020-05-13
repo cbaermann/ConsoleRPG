@@ -5,8 +5,8 @@ public class RoomTwoEnemy extends Enemy {
     public RoomTwoEnemy() {
         setName("Randy");
         setDefence(6);
-        setHealth(5);
-        setStrength(4);
+        setHealth(16);
+        setStrength(7);
     }
 }
 

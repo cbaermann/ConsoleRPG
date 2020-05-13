@@ -20,13 +20,13 @@ public class Enemy {
     }
     //DEFENCE AGAINST A PLAYER ATTACK
     public void enemyDefend(Player player) {
-        int result = player.getStrength() - this.getDefence();
-        if (result <= 0) {
-            System.out.println(player.getName() + " did no damage");
-        } else {
-            this.setHealth(this.health - result);
-            System.out.println(player.getName() + " did " + result + " damage");
-        }
+            int result = player.getStrength() - this.getDefence();
+            if (result <= 0) {
+                System.out.println(player.getName() + " did no damage");
+            } else {
+                this.setHealth(health - result);
+                System.out.println(player.getName() + " did " + result + " damage");
+            }
     }
     //INCREASES ENEMY HEALTH
     public void enemyHeal() {

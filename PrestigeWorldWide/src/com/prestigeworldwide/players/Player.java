@@ -20,6 +20,8 @@ public class Player {
         }
         if (enemy.getHealth() <= 0) {
             System.out.println("You defeated " + enemy.getName());
+            this.setHealth(this.getHealth() + 10);
+            System.out.println("\n \nYour health has been boosted to " + this.getHealth());
         }
 
     }
@@ -27,7 +29,7 @@ public class Player {
     public void playerDefend(Enemy enemy) {
         int result = enemy.getStrength() - this.getDefence();
         if (result <= 0) {
-            System.out.println(enemy.getName() + "did no damage");
+            System.out.println(enemy.getName() + " did no damage");
         } else {
             this.setHealth(this.health - result);
             System.out.println(enemy.getName() + " did " + result + " damage");

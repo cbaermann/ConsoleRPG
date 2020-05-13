@@ -4,8 +4,8 @@ public class Brennan extends Player {
 
     public Brennan() {
         setName("Brennan");
-        setDefence(4);
-        setHealth(8);
-        setStrength(4);
+        setDefence(5);
+        setHealth(7);
+        setStrength(6);
     }
 }

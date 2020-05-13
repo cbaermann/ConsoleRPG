@@ -4,9 +4,9 @@ public class Nancy extends Player {
 
     public Nancy() {
         setName("Nancy");
-        setDefence(5);
-        setStrength(7);
-        setHealth(10);
+        setDefence(2);
+        setStrength(3);
+        setHealth(15);
     }
 
 }

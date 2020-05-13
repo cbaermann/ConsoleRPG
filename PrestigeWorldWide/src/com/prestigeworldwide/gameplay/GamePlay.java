@@ -15,7 +15,7 @@ public class GamePlay {
     private String input;
 
     public void title() {
-        System.out.println("\nWelcome to Prestige World Wide \n");
+        titleDecorator();
         choosePlayer();
     }
 
@@ -34,7 +34,7 @@ public class GamePlay {
             beginning();
         }
         if (input.equalsIgnoreCase("n")) {
-            System.out.println("Well you kind of have no choice");
+            System.out.println("Well you kind of have no choice \n \n");
             beginning();
 
         } else {
@@ -47,8 +47,7 @@ public class GamePlay {
     public void beginning() {
         System.out.println(" You awaken to the sound of someone playing drums," +
                             "\n but nobody plays your drums besides you!!" +
-                            "\nGo investigate? (y/n) \n");
-        System.out.println("Would you like to continue forward? y/n");
+                            "\n \n Go investigate? (y/n) \n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
             enemy = EnemyGameplayFactory.createEnemy(currentRoom);
@@ -74,7 +73,7 @@ public class GamePlay {
     public void partTwo() {
         System.out.println("\n You just got a job at Derek's helicopter leasing company " +
                             "\n As you walk by an office, you repeatedly hear POW or PAW... " +
-                            "\n you can't really tell exactly..." +
+                            "\n you can't really tell exactly... \n \n" +
                             "\nInvestigate what the noise is? (y/n)");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -100,7 +99,7 @@ public class GamePlay {
     //PART THREE - TREE HOUSE BATTLE
     public void partThree() {
         System.out.println("\n You are in the back yard and you hear someone going " +
-                "\n through your magazines while singing Sweet Child of Mine..." +
+                "\n through your magazines while singing Sweet Child of Mine...\n \n" +
                 "\nEnter the Tree House ready to attack like a spider monkey? (y/n)");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -111,7 +110,8 @@ public class GamePlay {
                 battlePrompt();
             }
             if (enemy.getHealth() <= 0) {
-                System.out.println("\n Congrats! You are the champion and can now sing " +
+                congratsDecorator();
+                System.out.println("\n You are the champion and can now sing " +
                         "\n Por Ti Volare at the Catalina Wine Mixer!");
                 System.out.println("\nWould you like to play again? y/n");
                 input = scanner.nextLine();
@@ -125,17 +125,6 @@ public class GamePlay {
                 else {
                 System.out.println("Invalid input");
                 choosePlayer();
-                }
-                System.out.println("Congrats! You are the champion and can now sing " +
-                        "Por Ti Volare at the Catalina Wine Mixer!");
-                System.out.println("Would you like to play again? y/n");
-                input = scanner.nextLine();
-                if(input.equalsIgnoreCase("y")){
-                    choosePlayer();
-                }
-                if(input.equalsIgnoreCase("n")){
-                    System.out.println("Thank you for playing");
-                    System.exit(0);
                 }
             }
         }
@@ -161,7 +150,7 @@ public class GamePlay {
             }
             if (input.equalsIgnoreCase("h")) {
                 player.playerHeal();
-                enemyAction();
+                enemy.enemyAttack(player);
             }
             if (input.equalsIgnoreCase("q")) {
                 choosePlayer();
@@ -194,6 +183,26 @@ public class GamePlay {
     public void healthStatus() {
         System.out.println("\n" + "Your health= " + player.getHealth());
         System.out.println(enemy.getName() + "'s health= " + enemy.getHealth());
+    }
+
+    public void titleDecorator(){
+        System.out.println("\n" +
+                "╦ ╦┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐  ┌┬┐┌─┐  ╔═╗┬─┐┌─┐┌─┐┌┬┐┬┌─┐┌─┐  ╦ ╦┌─┐┬─┐┬  ┌┬┐╦ ╦┬┌┬┐┌─┐\n" +
+                "║║║├┤ │  │  │ ││││├┤    │ │ │  ╠═╝├┬┘├┤ └─┐ │ ││ ┬├┤   ║║║│ │├┬┘│   ││║║║│ ││├┤ \n" +
+                "╚╩╝└─┘┴─┘└─┘└─┘┴ ┴└─┘   ┴ └─┘  ╩  ┴└─└─┘└─┘ ┴ ┴└─┘└─┘  ╚╩╝└─┘┴└─┴─┘─┴┘╚╩╝┴─┴┘└─┘\n");
+    }
+
+    public void congratsDecorator(){
+        System.out.println("\n" +
+                " ██████╗ ██████╗ ███╗   ██╗ ██████╗ ██████╗  █████╗ ████████╗██╗   ██╗██╗      █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗    \n" +
+                "██╔════╝██╔═══██╗████╗  ██║██╔════╝ ██╔══██╗██╔══██╗╚══██╔══╝██║   ██║██║     ██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝    \n" +
+                "██║     ██║   ██║██╔██╗ ██║██║  ███╗██████╔╝███████║   ██║   ██║   ██║██║     ███████║   ██║   ██║██║   ██║██╔██╗ ██║███████╗    \n" +
+                "██║     ██║   ██║██║╚██╗██║██║   ██║██╔══██╗██╔══██║   ██║   ██║   ██║██║     ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║    \n" +
+                "╚██████╗╚██████╔╝██║ ╚████║╚██████╔╝██║  ██║██║  ██║   ██║   ╚██████╔╝███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║███████║    \n" +
+                " ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝    \n" +
+                "                                                                                                                                 \n" +
+                "                                                                                                                                 \n" +
+                "                                                                                                                                 \n");
     }
 
 

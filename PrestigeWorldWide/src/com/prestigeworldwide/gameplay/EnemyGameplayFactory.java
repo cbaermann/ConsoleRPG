@@ -20,12 +20,6 @@ public class EnemyGameplayFactory {
         if (currentRoom == 3) {
             enemy = new RoomThreeEnemy();
         }
-        //not working. If this calls choosePlayer again, it will not let you chose a new player.
-//        else{
-//            PlayerScanner ps = new PlayerScanner();
-//            System.out.println("You must choose an option of 1, 2 or 3.");
-//            ps.chosePlayer();
-//        }
 
         return enemy;
     }

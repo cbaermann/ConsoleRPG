@@ -158,11 +158,9 @@ public class GamePlay {
       if(enemy.getHealth() > 0) {
           if (result > 0 && result <= 5) {
               enemy.enemyAttack(player);
-              System.out.println(result);
           }
           if (result > 5 && result < 9) {
               enemy.enemyDefend(player);
-              System.out.println(result);
           }
           if (result == 9) {
               enemy.enemyHeal();

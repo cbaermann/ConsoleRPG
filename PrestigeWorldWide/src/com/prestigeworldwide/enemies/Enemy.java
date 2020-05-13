@@ -9,17 +9,20 @@ public class Enemy {
     private int defence;
 
     //ATTACK THAT EFFECTS THE PLAYERS HEALTH
-    public void enemyAttack(Player player) {
+    public int enemyAttack(Player player) {
+        int result = 0;
         if (player.getHealth() > 0) {
             System.out.println(getName() + " attacked for " + getStrength() + " damage");
+            result = player.getHealth() - this.getStrength();
             player.setHealth(player.getHealth() - this.getStrength());
         }
         if (player.getHealth() <= 0) {
             System.out.println("You were defeated!! Try again! ");
         }
+        return result;
     }
     //DEFENCE AGAINST A PLAYER ATTACK
-    public void enemyDefend(Player player) {
+    public int enemyDefend(Player player) {
             int result = player.getStrength() - this.getDefence();
             if (result <= 0) {
                 System.out.println(player.getName() + " did no damage");
@@ -27,11 +30,14 @@ public class Enemy {
                 this.setHealth(health - result);
                 System.out.println(player.getName() + " did " + result + " damage");
             }
+            return result;
     }
     //INCREASES ENEMY HEALTH
-    public void enemyHeal() {
-        setHealth(this.health + 10);
+    public int enemyHeal() {
+        int result = this.health + 5;
+        setHealth(this.health + 5);
         System.out.println(this.getName() + " healed. Health is now: " + getHealth());
+        return result;
     }
 
     //GETTERS AND SETTERS

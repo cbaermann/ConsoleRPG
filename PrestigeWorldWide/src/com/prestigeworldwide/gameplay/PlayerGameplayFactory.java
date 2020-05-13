@@ -11,23 +11,22 @@ public class PlayerGameplayFactory {
 
     }
 
-    public static Player createPlayer(String playerNum) {
+    public static Player createPlayer(String playerNum){
         Player player = null;
-        if (playerNum.equals("1")) {
-            player = new Brennan();
+        switch(playerNum){
+            case "1":
+                player = new Brennan();
+                break;
+            case "2":
+                player = new Nancy();
+                break;
+            case "3":
+                player = new Dale();
+                break;
+            default:
+                System.out.println("Because you can not follow direction, we chose for you");
+                player = new Dale();
         }
-        if (playerNum.equals("2")) {
-            player = new Nancy();
-        }
-        if (playerNum.equals("3")) {
-            player = new Dale();
-
-        }
-        else{
-            System.out.println("You can not follow direction so we chose for you");
-            player = new Dale();
-        }
-
         return player;
     }
 }

@@ -16,6 +16,7 @@ public class GamePlay {
 
     public void title() {
         System.out.println("\nWelcome to Prestige World Wide \n");
+        choosePlayer();
     }
 
     //CHOOSE YOUR CHARACTER TO PLAY WITH
@@ -23,6 +24,7 @@ public class GamePlay {
         System.out.println("Who do you choose..." +
                 "\n 1. Brennan \n 2. Nancy \n 3. Dale");
         input = scanner.nextLine();
+        //Delegates to PlayerGamePlayFactory to instantiate a new player
         player = PlayerGameplayFactory.createPlayer(input);
         System.out.println("You chose " + player.getName() + ". " +
                 "\n Base stats are as follows: \n" + player.toString());
@@ -45,10 +47,7 @@ public class GamePlay {
     public void beginning() {
         System.out.println(" You awaken to the sound of someone playing drums," +
                             "\n but nobody plays your drums besides you!!" +
-                            "\nGo investigate? (y/n)");
-        System.out.println(" You awaken to the sound of someone playing drums" +
-                "\n but nobody plays your drums besides you" +
-                "\n go investigate");
+                            "\nGo investigate? (y/n) \n");
         System.out.println("Would you like to continue forward? y/n");
         input = scanner.nextLine();
         if (input.equalsIgnoreCase("y")) {

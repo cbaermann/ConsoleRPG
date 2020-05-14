@@ -125,6 +125,7 @@ public class GamePlay {
                 }
                 else {
                 System.out.println("Invalid input");
+                currentRoom = 1;
                 choosePlayer();
                 }
             }

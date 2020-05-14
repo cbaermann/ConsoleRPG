@@ -116,6 +116,7 @@ public class GamePlay {
                 System.out.println("\nWould you like to play again? y/n");
                 input = scanner.nextLine();
                 if (input.equalsIgnoreCase("y")) {
+                    currentRoom = 1;
                     choosePlayer();
                 }
                 if (input.equalsIgnoreCase("n")) {

@@ -22,7 +22,7 @@ public class PlayerTest {
 
     @Test
     public void testPlayerAttack() {
-        assertEquals(20.0, player1.playerAttack(enemy1), .001);
+        assertEquals(-5, player1.playerAttack(enemy1), .001);
     }
     @Test
     public void testPlayerDefend() {

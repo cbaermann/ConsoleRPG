@@ -164,6 +164,9 @@ public class GamePlay {
         }
     }
 
+
+    //Helper Methods
+
     //RANDOMIZED ENEMY RESPONSES DURING BATTLE
     public void enemyAction() {
         Random rand = new Random();

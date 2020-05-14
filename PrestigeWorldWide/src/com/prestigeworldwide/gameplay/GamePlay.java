@@ -169,10 +169,10 @@ public class GamePlay {
         Random rand = new Random();
         int result = rand.nextInt(10 - 1) + 1;
         if (enemy.getHealth() > 0) {
-            if (result > 0 && result <= 5) {
+            if (result > 0 && result <= 6) {
                 enemy.enemyAttack(player);
             }
-            if (result > 5 && result < 9) {
+            if (result > 6 && result < 9) {
                 enemy.enemyDefend(player);
             }
             if (result == 9) {
